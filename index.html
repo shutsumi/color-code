@@ -208,6 +208,38 @@ summary{cursor:pointer;font-weight:700;color:var(--strong)}
 details p{margin-top:8px}
 
 footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:var(--sub);display:grid;gap:4px}
+footer p{margin:0}
+.consult{display:grid;justify-items:center;gap:8px;text-align:center;padding:24px 16px;margin-bottom:14px;background:var(--panel);border-radius:10px}
+.consult p{font-size:13px;color:var(--ink)}
+.consult-btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:12px 22px;border-radius:999px;letter-spacing:.04em}
+.consult-btn:hover{filter:brightness(.95)}
+
+/* 近い日本の色・日本の色の名前 */
+.near{margin:0;font-size:13px;color:var(--sub);min-height:1.8em}
+.near a{color:var(--strong);font-weight:700}
+.tip small{color:var(--sub);font-size:11px}
+.tip small:empty{display:none}
+.wairo{display:grid;gap:12px}
+.wairo h2{margin:0}
+.wcard{display:flex;align-items:center;gap:16px;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;padding:12px}
+.wcard>i{width:88px;height:88px;border-radius:8px;flex:none;border:1px solid rgba(0,0,0,.08);transition:background .12s}
+.wtext{flex:1;min-width:160px;display:grid}
+.wtext p{margin:0}
+.wmsg{font-size:12px;color:var(--sub)}
+.wname{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.wname a{font-size:24px;font-weight:700;letter-spacing:.1em;color:var(--strong);text-decoration:none}
+.wname a:hover{text-decoration:underline}
+.wname span{font-size:13px;color:var(--sub);letter-spacing:.1em}
+.whex{font-family:Lato,sans-serif;font-size:16px;letter-spacing:.06em}
+.wbtns{display:flex;gap:8px;flex-wrap:wrap}
+.btn.omi{border-color:var(--accent);color:var(--accent);font-weight:700}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(24px,1fr));gap:3px}
+.wgrid button{aspect-ratio:1;border:0;border-radius:3px;cursor:pointer;padding:0;min-width:0}
+.wgrid button:hover,.wgrid button.on{outline:2px solid var(--strong);outline-offset:1px;z-index:1}
+.wgrid button.dim{opacity:.12}
+.wcard.flash>i{animation:pop .5s ease}
+@keyframes pop{0%{transform:scale(.85)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.wcard.flash>i{animation:none}.wcard>i{transition:none}}
 
 .toast{
   position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);
@@ -231,6 +263,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
         <li><a href="#about">カラーコードとは</a></li>
         <li><a href="#read">6桁の読み方</a></li>
         <li><a href="#convert">RGB→6桁変換</a></li>
+        <li><a href="#wairo">日本の色の名前</a></li>
         <li><a href="#list">よく使う色の一覧</a></li>
         <li><a href="#howto">HTML・ブログでの指定方法</a></li>
         <li><a href="#faq">よくある質問</a></li>
@@ -244,7 +277,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
       <div class="map-box" id="mapBox">
         <canvas id="map" aria-label="全色マップ。クリックでカラーコードをコピー"></canvas>
         <canvas id="gray" aria-label="白から黒のグレー。クリックでカラーコードをコピー"></canvas>
-        <div class="tip" id="tip" hidden><i></i><span class="hex"></span></div>
+        <div class="tip" id="tip" hidden><i></i><span class="hex"></span><small></small></div>
       </div>
       <div class="satrow">
         <span>鮮やかさ</span>
@@ -281,6 +314,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
           <input id="hexIn" class="field" type="text" autocomplete="off" spellcheck="false" placeholder="カラーコードを入れて表示（例 ff69b4）" aria-label="カラーコードを入力">
           <button class="btn" id="eye" type="button" hidden>スポイト</button>
         </div>
+        <p class="near" id="near" aria-live="polite"></p>
       </section>
     </div>
 
@@ -288,6 +322,25 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
       <h2>コピーした色 <small>最新30色まで。クリックでもう一度コピー</small> <button class="linkbtn" id="clearHist" type="button" hidden>履歴を消す</button></h2>
       <div class="chips" id="hist"></div>
       <p class="empty" id="histEmpty">まだありません。色をコピーするとここに並びます。</p>
+    </section>
+
+    <section id="wairo" class="wairo">
+      <h2>日本の色の名前 <small>東雲色・山吹色・藍色など238色。マスをクリックするとコピーできます</small></h2>
+      <div class="wcard" id="wcard">
+        <i id="wSw" style="background:#F19072"></i>
+        <div class="wtext">
+          <p class="wmsg" id="wMsg">名前のついた日本の色</p>
+          <p class="wname"><a id="wName" href="wairo/shinonomeiro/">東雲色</a><span id="wYomi">しののめいろ</span></p>
+          <p class="whex" id="wHex">#F19072</p>
+        </div>
+        <div class="wbtns">
+          <button class="btn" id="wCopy" type="button">コピー</button>
+          <button class="btn omi" id="omikuji" type="button">色みくじを引く</button>
+        </div>
+      </div>
+      <input id="wq" class="field" type="search" placeholder="名前や読み方で探す（例 しののめ、やまぶき）" aria-label="日本の色を名前で探す">
+      <div class="wgrid" id="wgrid" role="list"></div>
+      <p class="note"><a href="wairo/">日本の色の名前とカラーコード一覧（238色）</a>では、色ごとのRGBや似ている色も見られます。</p>
     </section>
 
     <article class="article">
@@ -323,7 +376,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
 
       <section id="list" class="wide">
         <h2>よく使う色のカラーコード一覧</h2>
-        <p class="lead">クリックするとカラーコードがコピーされます。英語名はHTML・CSSでそのまま色名として使えるものです。「和色」は日本の伝統色で、一般に使われている値を載せています。</p>
+        <p class="lead">クリックするとカラーコードがコピーされます。英語名はHTML・CSSでそのまま色名として使えるものです。「和色」は日本の伝統的な色の名前で、Wikipedia「日本の色の一覧」の値です（資料によって値が少し違うことがあります）。<a href="wairo/">日本の色238色の一覧</a>もあります。</p>
         <div class="groups">
           <div class="group" id="list-red">
             <h3><i style="background:#FF0000"></i>赤のカラーコード</h3>
@@ -333,7 +386,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="FF6347" aria-label="トマト #FF6347 をコピー"><i style="background:#FF6347"></i><span>トマト<code>#FF6347</code><small>tomato</small></span></button>
               <button class="sw" type="button" data-hex="B22222" aria-label="ファイアブリック #B22222 をコピー"><i style="background:#B22222"></i><span>ファイアブリック<code>#B22222</code><small>firebrick</small></span></button>
               <button class="sw" type="button" data-hex="8B0000" aria-label="ダークレッド #8B0000 をコピー"><i style="background:#8B0000"></i><span>ダークレッド<code>#8B0000</code><small>darkred</small></span></button>
-              <button class="sw" type="button" data-hex="B7282E" aria-label="茜色 #B7282E をコピー"><i style="background:#B7282E"></i><span>茜色<code>#B7282E</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="B13546" aria-label="茜色 #B13546 をコピー"><i style="background:#B13546"></i><span>茜色<code>#B13546</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-pink">
@@ -344,8 +397,8 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="FF69B4" aria-label="ホットピンク #FF69B4 をコピー"><i style="background:#FF69B4"></i><span>ホットピンク<code>#FF69B4</code><small>hotpink</small></span></button>
               <button class="sw" type="button" data-hex="FF1493" aria-label="ディープピンク #FF1493 をコピー"><i style="background:#FF1493"></i><span>ディープピンク<code>#FF1493</code><small>deeppink</small></span></button>
               <button class="sw" type="button" data-hex="C71585" aria-label="ミディアムバイオレットレッド #C71585 をコピー"><i style="background:#C71585"></i><span>ミディアムバイオレットレッド<code>#C71585</code><small>mediumvioletred</small></span></button>
-              <button class="sw" type="button" data-hex="FEF4F4" aria-label="桜色 #FEF4F4 をコピー"><i style="background:#FEF4F4"></i><span>桜色<code>#FEF4F4</code><small>和色</small></span></button>
-              <button class="sw" type="button" data-hex="F09199" aria-label="桃色 #F09199 をコピー"><i style="background:#F09199"></i><span>桃色<code>#F09199</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="FEEEED" aria-label="桜色 #FEEEED をコピー"><i style="background:#FEEEED"></i><span>桜色<code>#FEEEED</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="F58F98" aria-label="桃色 #F58F98 をコピー"><i style="background:#F58F98"></i><span>桃色<code>#F58F98</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-orange">
@@ -355,7 +408,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="FF8C00" aria-label="ダークオレンジ #FF8C00 をコピー"><i style="background:#FF8C00"></i><span>ダークオレンジ<code>#FF8C00</code><small>darkorange</small></span></button>
               <button class="sw" type="button" data-hex="FF7F50" aria-label="コーラル #FF7F50 をコピー"><i style="background:#FF7F50"></i><span>コーラル<code>#FF7F50</code><small>coral</small></span></button>
               <button class="sw" type="button" data-hex="FFA07A" aria-label="ライトサーモン #FFA07A をコピー"><i style="background:#FFA07A"></i><span>ライトサーモン<code>#FFA07A</code><small>lightsalmon</small></span></button>
-              <button class="sw" type="button" data-hex="EB6101" aria-label="朱色 #EB6101 をコピー"><i style="background:#EB6101"></i><span>朱色<code>#EB6101</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="EF454A" aria-label="朱色 #EF454A をコピー"><i style="background:#EF454A"></i><span>朱色<code>#EF454A</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-yellow">
@@ -365,7 +418,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="FFD700" aria-label="ゴールド #FFD700 をコピー"><i style="background:#FFD700"></i><span>ゴールド<code>#FFD700</code><small>gold</small></span></button>
               <button class="sw" type="button" data-hex="F0E68C" aria-label="カーキ #F0E68C をコピー"><i style="background:#F0E68C"></i><span>カーキ<code>#F0E68C</code><small>khaki</small></span></button>
               <button class="sw" type="button" data-hex="FFFACD" aria-label="レモンシフォン #FFFACD をコピー"><i style="background:#FFFACD"></i><span>レモンシフォン<code>#FFFACD</code><small>lemonchiffon</small></span></button>
-              <button class="sw" type="button" data-hex="F8B500" aria-label="山吹色 #F8B500 をコピー"><i style="background:#F8B500"></i><span>山吹色<code>#F8B500</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="F8B400" aria-label="山吹色 #F8B400 をコピー"><i style="background:#F8B400"></i><span>山吹色<code>#F8B400</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-green">
@@ -376,8 +429,8 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="228B22" aria-label="フォレストグリーン #228B22 をコピー"><i style="background:#228B22"></i><span>フォレストグリーン<code>#228B22</code><small>forestgreen</small></span></button>
               <button class="sw" type="button" data-hex="2E8B57" aria-label="シーグリーン #2E8B57 をコピー"><i style="background:#2E8B57"></i><span>シーグリーン<code>#2E8B57</code><small>seagreen</small></span></button>
               <button class="sw" type="button" data-hex="90EE90" aria-label="ライトグリーン #90EE90 をコピー"><i style="background:#90EE90"></i><span>ライトグリーン<code>#90EE90</code><small>lightgreen</small></span></button>
-              <button class="sw" type="button" data-hex="C3D825" aria-label="若草色 #C3D825 をコピー"><i style="background:#C3D825"></i><span>若草色<code>#C3D825</code><small>和色</small></span></button>
-              <button class="sw" type="button" data-hex="AACF53" aria-label="萌黄 #AACF53 をコピー"><i style="background:#AACF53"></i><span>萌黄<code>#AACF53</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="ABC900" aria-label="若草色 #ABC900 をコピー"><i style="background:#ABC900"></i><span>若草色<code>#ABC900</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="A9D159" aria-label="萌黄色 #A9D159 をコピー"><i style="background:#A9D159"></i><span>萌黄色<code>#A9D159</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-lightblue">
@@ -387,8 +440,8 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="ADD8E6" aria-label="ライトブルー #ADD8E6 をコピー"><i style="background:#ADD8E6"></i><span>ライトブルー<code>#ADD8E6</code><small>lightblue</small></span></button>
               <button class="sw" type="button" data-hex="00FFFF" aria-label="シアン #00FFFF をコピー"><i style="background:#00FFFF"></i><span>シアン<code>#00FFFF</code><small>cyan</small></span></button>
               <button class="sw" type="button" data-hex="40E0D0" aria-label="ターコイズ #40E0D0 をコピー"><i style="background:#40E0D0"></i><span>ターコイズ<code>#40E0D0</code><small>turquoise</small></span></button>
-              <button class="sw" type="button" data-hex="BCE2E8" aria-label="水色 #BCE2E8 をコピー"><i style="background:#BCE2E8"></i><span>水色<code>#BCE2E8</code><small>和色</small></span></button>
-              <button class="sw" type="button" data-hex="A0D8EF" aria-label="空色 #A0D8EF をコピー"><i style="background:#A0D8EF"></i><span>空色<code>#A0D8EF</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="AFDFE4" aria-label="水色 #AFDFE4 をコピー"><i style="background:#AFDFE4"></i><span>水色<code>#AFDFE4</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="90D7EC" aria-label="空色 #90D7EC をコピー"><i style="background:#90D7EC"></i><span>空色<code>#90D7EC</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-blue">
@@ -399,8 +452,8 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="1E90FF" aria-label="ドジャーブルー #1E90FF をコピー"><i style="background:#1E90FF"></i><span>ドジャーブルー<code>#1E90FF</code><small>dodgerblue</small></span></button>
               <button class="sw" type="button" data-hex="000080" aria-label="ネイビー #000080 をコピー"><i style="background:#000080"></i><span>ネイビー<code>#000080</code><small>navy</small></span></button>
               <button class="sw" type="button" data-hex="165E83" aria-label="藍色 #165E83 をコピー"><i style="background:#165E83"></i><span>藍色<code>#165E83</code><small>和色</small></span></button>
-              <button class="sw" type="button" data-hex="223A70" aria-label="紺色 #223A70 をコピー"><i style="background:#223A70"></i><span>紺色<code>#223A70</code><small>和色</small></span></button>
-              <button class="sw" type="button" data-hex="1E50A2" aria-label="瑠璃色 #1E50A2 をコピー"><i style="background:#1E50A2"></i><span>瑠璃色<code>#1E50A2</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="233B6C" aria-label="紺色 #233B6C をコピー"><i style="background:#233B6C"></i><span>紺色<code>#233B6C</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="2A5CAA" aria-label="瑠璃色 #2A5CAA をコピー"><i style="background:#2A5CAA"></i><span>瑠璃色<code>#2A5CAA</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-purple">
@@ -410,7 +463,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="EE82EE" aria-label="バイオレット #EE82EE をコピー"><i style="background:#EE82EE"></i><span>バイオレット<code>#EE82EE</code><small>violet</small></span></button>
               <button class="sw" type="button" data-hex="8A2BE2" aria-label="ブルーバイオレット #8A2BE2 をコピー"><i style="background:#8A2BE2"></i><span>ブルーバイオレット<code>#8A2BE2</code><small>blueviolet</small></span></button>
               <button class="sw" type="button" data-hex="E6E6FA" aria-label="ラベンダー #E6E6FA をコピー"><i style="background:#E6E6FA"></i><span>ラベンダー<code>#E6E6FA</code><small>lavender</small></span></button>
-              <button class="sw" type="button" data-hex="BBBCDE" aria-label="藤色 #BBBCDE をコピー"><i style="background:#BBBCDE"></i><span>藤色<code>#BBBCDE</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="AFB4DB" aria-label="藤色 #AFB4DB をコピー"><i style="background:#AFB4DB"></i><span>藤色<code>#AFB4DB</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-brown">
@@ -421,7 +474,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="D2691E" aria-label="チョコレート #D2691E をコピー"><i style="background:#D2691E"></i><span>チョコレート<code>#D2691E</code><small>chocolate</small></span></button>
               <button class="sw" type="button" data-hex="D2B48C" aria-label="タン #D2B48C をコピー"><i style="background:#D2B48C"></i><span>タン<code>#D2B48C</code><small>tan</small></span></button>
               <button class="sw" type="button" data-hex="F5F5DC" aria-label="ベージュ #F5F5DC をコピー"><i style="background:#F5F5DC"></i><span>ベージュ<code>#F5F5DC</code><small>beige</small></span></button>
-              <button class="sw" type="button" data-hex="96514D" aria-label="小豆色 #96514D をコピー"><i style="background:#96514D"></i><span>小豆色<code>#96514D</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="98514B" aria-label="小豆色 #98514B をコピー"><i style="background:#98514B"></i><span>小豆色<code>#98514B</code><small>和色</small></span></button>
             </div>
           </div>
           <div class="group" id="list-mono">
@@ -433,7 +486,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
               <button class="sw" type="button" data-hex="C0C0C0" aria-label="シルバー #C0C0C0 をコピー"><i style="background:#C0C0C0"></i><span>シルバー<code>#C0C0C0</code><small>silver</small></span></button>
               <button class="sw" type="button" data-hex="D3D3D3" aria-label="ライトグレー #D3D3D3 をコピー"><i style="background:#D3D3D3"></i><span>ライトグレー<code>#D3D3D3</code><small>lightgray</small></span></button>
               <button class="sw" type="button" data-hex="A9A9A9" aria-label="ダークグレー #A9A9A9 をコピー"><i style="background:#A9A9A9"></i><span>ダークグレー<code>#A9A9A9</code><small>darkgray</small></span></button>
-              <button class="sw" type="button" data-hex="FBFAF5" aria-label="生成り色 #FBFAF5 をコピー"><i style="background:#FBFAF5"></i><span>生成り色<code>#FBFAF5</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="C2B280" aria-label="生成色 #C2B280 をコピー"><i style="background:#C2B280"></i><span>生成色<code>#C2B280</code><small>和色</small></span></button>
             </div>
           </div>
         </div>
@@ -475,10 +528,14 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
   </main>
 
   <footer>
+    <!--CONSULT--><!--/CONSULT-->
+    <p><a href="wairo/">日本の色の名前とカラーコード一覧</a></p>
+    <p>日本の色の名前・読み・カラーコードは Wikipedia「<a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E8%89%B2%E3%81%AE%E4%B8%80%E8%A6%A7" target="_blank" rel="noopener">日本の色の一覧</a>」の近似値です。</p>
     <p>コピーした色の履歴と設定は、お使いのブラウザの中にだけ保存されます。外部には送信しません。</p>
   </footer>
 </div>
 
+<!--WAIRO-DATA--><script>window.WAIRO=[["藍色","あいいろ","165E83","aiiro"],["藍鼠","あいねず","5E7C85","ainezu"],["青","あお","0067C0","ao"],["青竹色","あおたけいろ","72BAA7","aotakeiro"],["青丹","あおに","858954","aoni"],["青鈍色","あおにびいろ","324356","aonibiiro"],["青緑","あおみどり","0090A8","aomidori"],["青紫","あおむらさき","6F51A1","aomurasaki"],["赤","あか","ED1A3D","aka"],["赤朽葉","あかくちば","DB8449","akakuchiba"],["赤香色","あかこういろ","F6B894","akakouiro"],["赤橙","あかだいだい","F15A22","akadaidai"],["茜色","あかねいろ","B13546","akaneiro"],["赤紫","あかむらさき","EB6EA5","akamurasaki"],["灰汁色","あくいろ","BCB09C","akuiro"],["浅緋","あさあけ","DF7163","asaake"],["浅黄色","あさぎいろ","FFCC33","asagiiro-ffcc33"],["浅葱色","あさぎいろ","00A4AC","asagiiro-00a4ac"],["浅緑","あさみどり","9BCF97","asamidori"],["小豆色","あずきいろ","98514B","azukiiro"],["亜麻色","あまいろ","D6C6AF","amairo"],["飴色","あめいろ","CD6118","ameiro"],["菖蒲色","あやめいろ","B168A8","ayameiro"],["洗柿","あらいがき","F0B694","araigaki"],["洗朱","あらいしゅ","D0826C","araishu"],["杏色","あんずいろ","F4A466","anzuiro"],["苺色","いちごいろ","BB5561","ichigoiro"],["一斤染","いっこんぞめ","FFD3E4","ikkonzome"],["今様色","いまよういろ","D0576B","imayouiro"],["鶯色","うぐいすいろ","918D40","uguisuiro"],["鶯茶","うぐいすちゃ","715C1F","uguisucha"],["鬱金色","うこんいろ","FABF14","ukoniro"],["薄色","うすいろ","CEB4B9","usuiro"],["薄紅","うすくれない","B15C65","usukurenai"],["淡香","うすこう","F3BF88","usukou"],["薄墨色","うすずみいろ","A3A3A2","usuzumiiro"],["薄水色","うすみずいろ","BCE1DF","usumizuiro"],["空五倍子色","うつぶしいろ","9D896C","utsubushiiro"],["卯の花色","うのはないろ","FBFBF6","unohanairo"],["梅鼠","うめねずみ","AD7984","umenezumi"],["裏葉柳","うらはやなぎ","C1D8AC","urahayanagi"],["江戸茶","えどちゃ","CD8C5C","edocha"],["江戸紫","えどむらさき","745399","edomurasaki"],["葡萄色","えびいろ","640125","ebiiro"],["葡萄染","えびぞめ","7A4171","ebizome"],["葡萄茶","えびちゃ","6C2C2F","ebicha"],["臙脂色","えんじいろ","B3424A","enjiiro"],["鉛丹色","えんたんいろ","EC6D51","entaniro"],["老竹色","おいたけいろ","769164","oitakeiro"],["楝色","おうちいろ","A596C7","ouchiiro"],["黄土色","おうどいろ","C39143","oudoiro"],["黄丹","おうに","F47A55","ouni"],["織部色","おりべいろ","125115","oribeiro"],["カーキ色","かーきいろ","C3B091","kakiiro-c3b091"],["貝紫色","かいむらさきいろ","7F1184","kaimurasakiiro"],["柿色","かきいろ","ED6D3D","kakiiro-ed6d3d"],["柿渋色","かきしぶいろ","BD7862","kakishibuiro"],["杜若色","かきつばたいろ","5E3862","kakitsubatairo"],["勝色","かちいろ","4D5269","kachiiro"],["樺色","かばいろ","C5591A","kabairo"],["樺茶","かばちゃ","726250","kabacha"],["瓶覗","かめのぞき","C5E4ED","kamenozoki"],["唐紅","からくれない","D93448","karakurenai"],["芥子色","からしいろ","D0AF4C","karashiiro"],["唐茶","からちゃ","A06705","karacha"],["苅安色","かりやすいろ","FFD768","kariyasuiro"],["土器色","かわらけいろ","C37854","kawarakeiro"],["萱草色","かんぞういろ","F8B862","kanzouiro"],["黄色","きいろ","FFD400","kiiro"],["桔梗色","ききょういろ","6A4C9C","kikyouiro"],["麹塵","きくじん","BFBD9E","kikujin"],["狐色","きつねいろ","C48847","kitsuneiro"],["生成色","きなりいろ","C2B280","kinariiro"],["黄蘗色","きはだいろ","FCF16E","kihadairo"],["黄緑色","きみどりいろ","B9C42F","kimidoriiro"],["伽羅色","きゃらいろ","D8A373","kyarairo"],["京紫","きょうむらさき","772F6D","kyoumurasaki"],["金色","きんいろ","FFD700","kiniro"],["銀色","ぎんいろ","C0C0C0","giniro"],["銀朱","ぎんしゅ","F12B00","ginshu"],["金茶","きんちゃ","E0861A","kincha"],["銀鼠","ぎんねずみ","BBBCBF","ginnezumi"],["草色","くさいろ","7B8D42","kusairo"],["梔子色","くちなしいろ","FFD768","kuchinashiiro"],["朽葉色","くちばいろ","896A45","kuchibairo"],["栗色","くりいろ","800000","kuriiro-800000"],["涅色","くりいろ","433634","kuriiro-433634"],["栗梅","くりうめ","6C1912","kuriume"],["胡桃色","くるみいろ","A86F4C","kurumiiro"],["紅蓮色","ぐれんいろ","AD002D","gureniro"],["紅色","くれないいろ","C22047","kurenaiiro"],["黒","くろ","000000","kuro"],["桑染","くわぞめ","DABC91","kuwazome"],["群青色","ぐんじょういろ","465DAA","gunjouiro"],["消炭色","けしずみいろ","595045","keshizumiiro"],["滅紫","けしむらさき","594255","keshimurasaki"],["月白","げっぱく","F6F7F8","geppaku"],["憲法色","けんぽういろ","543F32","kenpouiro"],["濃藍","こいあい","002E4E","koiai"],["香色","こういろ","EFCD9A","kouiro"],["柑子色","こうじいろ","FF5234","koujiiro"],["紅梅色","こうばいいろ","E86B79","koubaiiro"],["黄櫨染","こうろぜん","D99502","kourozen"],["黒檀","こくたん","250D00","kokutan"],["国防色","こくぼうしょく","7B6C3E","kokuboushoku"],["苔色","こけいろ","78882D","kokeiro"],["焦茶","こげちゃ","6A4D32","kogecha"],["古代紫","こだいむらさき","8C6589","kodaimurasaki"],["琥珀色","こはくいろ","EA930A","kohakuiro"],["媚茶","こびちゃ","716246","kobicha"],["小麦色","こむぎいろ","E4A343","komugiiro"],["紺色","こんいろ","233B6C","koniro"],["紺桔梗","こんききょう","211E55","konkikyou"],["紺青色","こんじょういろ","1A4472","konjouiro"],["左伊多津万色","さいたづまいろ","328131","saitazumairo"],["桜色","さくらいろ","FEEEED","sakurairo"],["錆浅葱","さびあさぎ","5C9291","sabiasagi"],["錆色","さびいろ","6C3424","sabiiro"],["珊瑚色","さんごいろ","FF7F50","sangoiro"],["紫苑色","しおんいろ","968ABD","shioniro"],["芝翫茶","しかんちゃ","AD7E4E","shikancha"],["紫紺","しこん","400B36","shikon"],["漆黒","しっこく","080000","shikkoku"],["東雲色","しののめいろ","F19072","shinonomeiro"],["赤銅色","しゃくどういろ","7E0F09","shakudouiro"],["朱色","しゅいろ","EF454A","shuiro"],["猩々緋","しょうじょうひ","CE313D","shoujouhi"],["白茶","しらちゃ","DAC4A5","shiracha"],["白","しろ","FFFFFF","shiro"],["真紅","しんく","B1063A","shinku"],["新橋色","しんばしいろ","59B9C6","shinbashiiro"],["蘇芳色","すおういろ","973C3F","suouiro"],["煤竹色","すすたけいろ","6F514C","susutakeiro"],["雀色","すずめいろ","864337","suzumeiro"],["墨色","すみいろ","343434","sumiiro"],["菫色","すみれいろ","705DA8","sumireiro"],["青磁色","せいじいろ","60B49F","seijiiro"],["石竹色","せきちくいろ","F9C1CF","sekichikuiro"],["仙斎茶","せんさいちゃ","474B42","sensaicha"],["赭","そほ","AB6953","soho"],["空色","そらいろ","90D7EC","sorairo"],["代赭色","たいしゃいろ","B36C3C","taishairo"],["橙色","だいだいいろ","FFB74C","daidaiiro"],["団十郎茶","だんじゅうろうちゃ","9F563A","danjuuroucha"],["千草色","ちぐさいろ","92B5A9","chigusairo"],["茶色","ちゃいろ","994C00","chairo"],["丁子茶","ちょうじちゃ","B4866B","choujicha"],["躑躅色","つつじいろ","E761A4","tsutsujiiro"],["露草色","つゆくさいろ","21A0DB","tsuyukusairo"],["鉄紺","てつこん","003149","tetsukon"],["鴇色","ときいろ","F3A696","tokiiro"],["常磐色","ときわいろ","007B43","tokiwairo"],["木賊色","とくさいろ","22825D","tokusairo"],["砥粉色","とのこいろ","F4DDA5","tonokoiro"],["鳶色","とびいろ","85403A","tobiiro"],["留紺","とめこん","1C305C","tomekon"],["鳥の子色","とりのこいろ","FFF1CF","torinokoiro"],["苗色","なえいろ","B0CA71","naeiro"],["茄子紺","なすこん","824880","nasukon"],["撫子色","なでしこいろ","F6ADC6","nadeshikoiro"],["菜の花色","なのはないろ","FCD900","nanohanairo"],["生壁色","なまかべいろ","AA8C63","namakabeiro"],["鉛色","なまりいろ","7B7C7D","namariiro"],["納戸色","なんどいろ","008899","nandoiro"],["丹色","にいろ","E45E32","niiro"],["似紫","にせむらさき","513743","nisemurasaki"],["鈍色","にびいろ","727171","nibiiro"],["乳白色","にゅうはくしょく","FFFFFB","nyuuhakushoku"],["濡烏","ぬれがらす","000B00","nuregarasu"],["根岸色","ねぎしいろ","908E65","negishiiro"],["鼠色","ねずみいろ","949495","nezumiiro"],["練色","ねりいろ","FFF9E2","neriiro"],["灰色","はいいろ","808080","haiiro"],["灰桜","はいざくら","E8D3D1","haizakura"],["榛色","はしばみいろ","BFA46F","hashibamiiro"],["肌色","はだいろ","F1BB93","hadairo"],["鳩羽色","はとばいろ","95859C","hatobairo"],["縹色","はなだいろ","267CA7","hanadairo"],["唐棣色","はねずいろ","F0908D","hanezuiro"],["薔薇色","ばらいろ","E73275","barairo"],["緋色","ひいろ","E54848","hiiro"],["白群","びゃくぐん","83CCD2","byakugun"],["白緑","びゃくろく","DAEAD0","byakuroku"],["桧皮色","ひわだいろ","7B4334","hiwadairo"],["鶸萌黄","ひわもえぎ","82AE46","hiwamoegi"],["深川鼠","ふかがわねずみ","85A1A0","fukagawanezumi"],["深緑","ふかみどり","004025","fukamidori"],["藤色","ふじいろ","AFB4DB","fujiiro"],["藤納戸","ふじなんど","606DA1","fujinando"],["藤紫","ふじむらさき","9B95C9","fujimurasaki"],["二藍","ふたあい","6B4978","futaai"],["紅赤","べにあか","E5004F","beniaka"],["紅樺色","べにかばいろ","B63D1B","benikabairo"],["紅緋","べにひ","F83929","benihi"],["弁柄色","べんがらいろ","8F2E14","bengarairo"],["牡丹色","ぼたんいろ","E761A4","botaniro"],["紛紅","まがいべに","FB3C02","magaibeni"],["枡花色","ますはないろ","5B7E91","masuhanairo"],["松葉色","まつばいろ","3F7735","matsubairo"],["蜜柑色","みかんいろ","F08300","mikaniro"],["水浅葱","みずあさぎ","8CD2BC","mizuasagi"],["水色","みずいろ","AFDFE4","mizuiro"],["緑","みどり","008000","midori"],["海松色","みるいろ","6E6B41","miruiro"],["紫","むらさき","A757A8","murasaki"],["紫鈍","むらさきにび","966F9C","murasakinibi"],["萌黄色","もえぎいろ","A9D159","moegiiro-a9d159"],["萌葱色","もえぎいろ","006C4F","moegiiro-006c4f"],["木蘭色","もくらんいろ","C7B370","mokuraniro"],["桃色","ももいろ","F58F98","momoiro"],["百塩茶","ももしおちゃ","542D24","momoshiocha"],["柳色","やなぎいろ","A8C97F","yanagiiro"],["山鳩色","やまばといろ","BFBD9E","yamabatoiro"],["山吹色","やまぶきいろ","F8B400","yamabukiiro"],["雄黄色","ゆうおういろ","EE9D19","yuuouiro"],["蓬色","よもぎいろ","616B07","yomogiiro"],["羊羹色","ようかんいろ","6D3C14","youkaniro"],["駱駝色","らくだいろ","BF794E","rakudairo"],["璃寛茶","りかんちゃ","6E6636","rikancha"],["利休茶","りきゅうちゃ","897845","rikyuucha"],["利休鼠","りきゅうねず","888E7E","rikyuunezu"],["竜胆色","りんどういろ","6967AB","rindouiro"],["瑠璃色","るりいろ","2A5CAA","ruriiro"],["瑠璃紺","るりこん","224B8F","rurikon"],["檸檬色","れもんいろ","FFF450","remoniro"],["煉瓦色","れんがいろ","AA5C3F","rengairo"],["呂色","ろいろ","0C0C0C","roiro"],["緑青","ろくしょう","5BAD92","rokushou"],["路考茶","ろこうちゃ","8C7042","rokoucha"],["若草色","わかくさいろ","ABC900","wakakusairo"],["若竹色","わかたけいろ","7CC28E","wakatakeiro"],["若菜色","わかないろ","CCDE68","wakanairo"],["若苗色","わかなえいろ","C7DC68","wakanaeiro"],["若葉色","わかばいろ","A4CA68","wakabairo"],["若緑","わかみどり","A5CD89","wakamidori"],["若芽色","わかめいろ","E0EBAF","wakameiro"],["山葵色","わさびいろ","8EC298","wasabiiro"],["勿忘草色","わすれなぐさいろ","9CC5E6","wasurenagusairo"]];</script><!--/WAIRO-DATA-->
 <div class="toast" id="toast" role="status" aria-live="polite"><i></i><span></span></div>
 
 <script>
@@ -530,7 +587,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
   const optHash = $('optHash'), optAuto = $('optAuto');
   optHash.checked = store.get('cc-hash', true);
   optAuto.checked = store.get('cc-auto', true);
-  optHash.onchange = () => { store.set('cc-hash', optHash.checked); render(); renderHist(); };
+  optHash.onchange = () => { store.set('cc-hash', optHash.checked); render(); renderHist(); if (wCur) $('wHex').textContent = fmtHex(wCur.hex); };
   optAuto.onchange = () => store.set('cc-auto', optAuto.checked);
   const fmtHex = hex => (optHash.checked ? '#' : '') + hex;
 
@@ -589,6 +646,7 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
       const one = [0, 0, 0]; one[i] = rgb[i];
       $('p' + c + 'b').style.background = `rgb(${one.join(',')})`;
     });
+    renderNear(rgb);
   }
   const copyCurrent = () => { const hex = toHex(currentRgb()); copy(fmtHex(hex), hex); };
 
@@ -636,6 +694,8 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
       tip.style.top = (e.clientY - box.top) + 'px';
       tip.querySelector('i').style.background = '#' + toHex(rgb);
       tip.querySelector('span').textContent = fmtHex(toHex(rgb));
+      const n = nearest(rgb);
+      tip.querySelector('small').textContent = n ? (n.d < 2.3 ? n.c.name : n.c.name + 'に近い') : '';
     });
     canvas.addEventListener('pointerleave', () => { tip.hidden = true; });
     canvas.addEventListener('click', e => {
@@ -734,6 +794,115 @@ footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:va
   document.querySelectorAll('.sw[data-hex]').forEach(b => b.onclick = () => {
     const hex = b.dataset.hex; copy(fmtHex(hex), hex); setRgb(parseHex(hex));
   });
+
+  // ---- 日本の色の名前 ----
+  // [名前, 読み, カラーコード, URL] は build.py が差し込む
+  const WAIRO = (window.WAIRO || []).map(([name, yomi, hex, slug]) => {
+    const rgb = parseHex(hex);
+    return { name, yomi, hex, slug, rgb, lab: toLab(rgb), hue: rgbToHsl(rgb) };
+  });
+  function toLab(c) {
+    const lin = v => (v /= 255) <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+    const [r, g, b] = c.map(lin);
+    const f = t => t > 216 / 24389 ? Math.cbrt(t) : (24389 / 27 * t + 16) / 116;
+    const fx = f((r * .4124 + g * .3576 + b * .1805) / .95047), fy = f(r * .2126 + g * .7152 + b * .0722), fz = f((r * .0193 + g * .1192 + b * .9505) / 1.08883);
+    return [116 * fy - 16, 500 * (fx - fy), 200 * (fy - fz)];
+  }
+  function nearest(rgb) {
+    if (!WAIRO.length) return null;
+    const l = toLab(rgb);
+    let best = null, bd = Infinity;
+    for (const c of WAIRO) {
+      const d = Math.hypot(l[0] - c.lab[0], l[1] - c.lab[1], l[2] - c.lab[2]);
+      if (d < bd) { bd = d; best = c; }
+    }
+    return { c: best, d: bd };
+  }
+  function renderNear(rgb) {
+    const el = $('near'), n = nearest(rgb);
+    if (!el || !n) return;
+    el.textContent = '';
+    el.append(n.d < 2.3 ? '日本の色の名前：' : 'いちばん近い日本の色：');
+    const a = document.createElement('a');
+    a.href = 'wairo/' + n.c.slug + '/'; a.textContent = n.c.name;
+    el.append(a, `（${n.c.yomi}　#${n.c.hex}）`);
+  }
+
+  const wgrid = $('wgrid');
+  let wCur = null;
+  function showWairo(c, msg) {
+    wCur = c;
+    $('wSw').style.background = '#' + c.hex;
+    $('wName').textContent = c.name; $('wName').href = 'wairo/' + c.slug + '/';
+    $('wYomi').textContent = c.yomi;
+    $('wHex').textContent = fmtHex(c.hex);
+    $('wMsg').textContent = msg;
+    wgrid.querySelectorAll('.on').forEach(b => b.classList.remove('on'));
+    const b = wgrid.querySelector(`[data-i="${WAIRO.indexOf(c)}"]`); if (b) b.classList.add('on');
+  }
+  if (WAIRO.length) {
+    // 色相の順に並べ、白・灰・黒は最後に明るい順
+    const order = WAIRO.map((c, i) => i).sort((a, b) => {
+      const A = WAIRO[a], B = WAIRO[b];
+      const ma = Math.hypot(A.lab[1], A.lab[2]) < 5, mb = Math.hypot(B.lab[1], B.lab[2]) < 5;
+      if (ma !== mb) return ma ? 1 : -1;
+      if (ma) return B.lab[0] - A.lab[0];
+      const ha = (A.hue[0] + 15) % 360, hb = (B.hue[0] + 15) % 360;
+      return Math.floor(ha / 12) - Math.floor(hb / 12) || B.lab[0] - A.lab[0];
+    });
+    const frag = document.createDocumentFragment();
+    order.forEach(i => {
+      const c = WAIRO[i], b = document.createElement('button');
+      b.type = 'button'; b.dataset.i = i; b.style.background = '#' + c.hex;
+      b.setAttribute('role', 'listitem'); b.setAttribute('aria-label', `${c.name}（${c.yomi}）#${c.hex} をコピー`); b.title = `${c.name}（${c.yomi}）#${c.hex}`;
+      frag.appendChild(b);
+    });
+    wgrid.appendChild(frag);
+    wgrid.addEventListener('pointerover', e => {
+      const b = e.target.closest('button'); if (b && e.pointerType === 'mouse') showWairo(WAIRO[b.dataset.i], 'この色の名前は');
+    });
+    wgrid.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      const c = WAIRO[b.dataset.i];
+      showWairo(c, 'コピーしました');
+      copy(fmtHex(c.hex), c.hex); setRgb(c.rgb);
+    });
+    $('wCopy').onclick = () => { if (wCur) { copy(fmtHex(wCur.hex), wCur.hex); setRgb(wCur.rgb); } };
+
+    // 探す
+    const toKata = s => s.replace(/[ぁ-ゖ]/g, ch => String.fromCharCode(ch.charCodeAt(0) + 0x60));
+    $('wq').addEventListener('input', e => {
+      const v = toKata(e.target.value.trim().replace(/^#/, '').toLowerCase());
+      let first = null;
+      wgrid.querySelectorAll('button').forEach(b => {
+        const c = WAIRO[b.dataset.i];
+        const ok = !v || toKata(c.name + c.yomi + c.hex.toLowerCase()).includes(v);
+        b.classList.toggle('dim', !ok);
+        if (ok && !first) first = c;
+      });
+      if (v && first) showWairo(first, '見つかった色');
+    });
+
+    // 色みくじ：日付ごとに決まる「今日の色」と、押すたびに変わるおみくじ
+    const today = new Date(), seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+    showWairo(WAIRO[(seed * 2654435761 >>> 0) % WAIRO.length], '今日の日本の色');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let spinning = false;
+    $('omikuji').onclick = () => {
+      if (spinning) return;
+      const pick = WAIRO[Math.floor(Math.random() * WAIRO.length)];
+      const card = $('wcard');
+      if (reduce) { showWairo(pick, 'あなたの色は'); return; }
+      spinning = true; let n = 0;
+      const tick = () => {
+        if (n++ < 14) { showWairo(WAIRO[Math.floor(Math.random() * WAIRO.length)], 'めくっています…'); setTimeout(tick, 40 + n * 12); return; }
+        showWairo(pick, 'あなたの色は');
+        card.classList.remove('flash'); void card.offsetWidth; card.classList.add('flash');
+        spinning = false;
+      };
+      tick();
+    };
+  }
 
   // ---- 起動 ----
   function drawAll() { drawMap(); drawGray(); drawSV(); }

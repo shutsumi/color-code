@@ -11,3 +11,13 @@ https://shutsumi.github.io/color-code/
 - コピー履歴はブラウザのlocalStorageにだけ保存
 
 `index.html` 1枚で動きます。ビルド不要。
+
+## 日本の色のページ
+
+`data/wairo.json`（Wikipedia「日本の色の一覧」の色名・読み・近似値）から、`python3 build.py` で次を生成します。
+
+- `wairo/index.html` … 日本の色の一覧
+- `wairo/<読みのローマ字>/index.html` … 1色ごとのページ（238色）
+- `sitemap.xml`、トップページの和色データと相談ボタン
+
+相談ボタンは `build.py` の `FORM_URL` に URL を入れて再生成すると表示されます。

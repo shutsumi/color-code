@@ -1,0 +1,2166 @@
+{
+ "source": "Wikipedia「日本の色の一覧」 https://ja.wikipedia.org/wiki/日本の色の一覧 （色名・読み・近似値のみ使用）",
+ "retrieved": "2026-09-28",
+ "colors": [
+  {
+   "name": "藍色",
+   "aliases": [],
+   "readings": [
+    "あいいろ"
+   ],
+   "hex": "165E83",
+   "wiki": "藍色"
+  },
+  {
+   "name": "藍鼠",
+   "aliases": [],
+   "readings": [
+    "あいねず"
+   ],
+   "hex": "5E7C85",
+   "wiki": "藍鼠"
+  },
+  {
+   "name": "青",
+   "aliases": [],
+   "readings": [
+    "あお"
+   ],
+   "hex": "0067C0",
+   "wiki": "青"
+  },
+  {
+   "name": "青竹色",
+   "aliases": [],
+   "readings": [
+    "あおたけいろ"
+   ],
+   "hex": "72BAA7",
+   "wiki": "青竹色"
+  },
+  {
+   "name": "青丹",
+   "aliases": [],
+   "readings": [
+    "あおに"
+   ],
+   "hex": "858954",
+   "wiki": "青丹"
+  },
+  {
+   "name": "青鈍色",
+   "aliases": [],
+   "readings": [
+    "あおにびいろ"
+   ],
+   "hex": "324356",
+   "wiki": "青鈍色"
+  },
+  {
+   "name": "青緑",
+   "aliases": [],
+   "readings": [
+    "あおみどり"
+   ],
+   "hex": "0090A8",
+   "wiki": "青緑"
+  },
+  {
+   "name": "青紫",
+   "aliases": [],
+   "readings": [
+    "あおむらさき"
+   ],
+   "hex": "6F51A1",
+   "wiki": "青紫"
+  },
+  {
+   "name": "赤",
+   "aliases": [],
+   "readings": [
+    "あか"
+   ],
+   "hex": "ED1A3D",
+   "wiki": "赤"
+  },
+  {
+   "name": "赤朽葉",
+   "aliases": [],
+   "readings": [
+    "あかくちば"
+   ],
+   "hex": "DB8449",
+   "wiki": "赤朽葉"
+  },
+  {
+   "name": "赤香色",
+   "aliases": [],
+   "readings": [
+    "あかこういろ"
+   ],
+   "hex": "F6B894",
+   "wiki": "赤香色"
+  },
+  {
+   "name": "赤橙",
+   "aliases": [],
+   "readings": [
+    "あかだいだい"
+   ],
+   "hex": "F15A22",
+   "wiki": "赤橙"
+  },
+  {
+   "name": "茜色",
+   "aliases": [],
+   "readings": [
+    "あかねいろ"
+   ],
+   "hex": "B13546",
+   "wiki": "茜色"
+  },
+  {
+   "name": "赤紫",
+   "aliases": [],
+   "readings": [
+    "あかむらさき"
+   ],
+   "hex": "EB6EA5",
+   "wiki": "マゼンタ"
+  },
+  {
+   "name": "灰汁色",
+   "aliases": [],
+   "readings": [
+    "あくいろ"
+   ],
+   "hex": "BCB09C",
+   "wiki": "灰汁色"
+  },
+  {
+   "name": "浅緋",
+   "aliases": [],
+   "readings": [
+    "あさあけ"
+   ],
+   "hex": "DF7163",
+   "wiki": "浅緋"
+  },
+  {
+   "name": "浅黄色",
+   "aliases": [],
+   "readings": [
+    "あさぎいろ"
+   ],
+   "hex": "FFCC33",
+   "wiki": "浅黄色"
+  },
+  {
+   "name": "浅葱色",
+   "aliases": [],
+   "readings": [
+    "あさぎいろ"
+   ],
+   "hex": "00A4AC",
+   "wiki": "浅葱色"
+  },
+  {
+   "name": "浅緑",
+   "aliases": [],
+   "readings": [
+    "あさみどり"
+   ],
+   "hex": "9BCF97",
+   "wiki": "浅緑"
+  },
+  {
+   "name": "小豆色",
+   "aliases": [],
+   "readings": [
+    "あずきいろ"
+   ],
+   "hex": "98514B",
+   "wiki": "小豆色"
+  },
+  {
+   "name": "亜麻色",
+   "aliases": [],
+   "readings": [
+    "あまいろ"
+   ],
+   "hex": "D6C6AF",
+   "wiki": "亜麻#亜麻色"
+  },
+  {
+   "name": "飴色",
+   "aliases": [],
+   "readings": [
+    "あめいろ"
+   ],
+   "hex": "CD6118",
+   "wiki": "飴色"
+  },
+  {
+   "name": "菖蒲色",
+   "aliases": [],
+   "readings": [
+    "あやめいろ"
+   ],
+   "hex": "B168A8",
+   "wiki": "菖蒲色"
+  },
+  {
+   "name": "洗柿",
+   "aliases": [],
+   "readings": [
+    "あらいがき"
+   ],
+   "hex": "F0B694",
+   "wiki": "洗柿"
+  },
+  {
+   "name": "洗朱",
+   "aliases": [],
+   "readings": [
+    "あらいしゅ"
+   ],
+   "hex": "D0826C",
+   "wiki": "洗朱"
+  },
+  {
+   "name": "杏色",
+   "aliases": [],
+   "readings": [
+    "あんずいろ"
+   ],
+   "hex": "F4A466",
+   "wiki": "アプリコット (色)"
+  },
+  {
+   "name": "苺色",
+   "aliases": [],
+   "readings": [
+    "いちごいろ"
+   ],
+   "hex": "BB5561",
+   "wiki": "苺色"
+  },
+  {
+   "name": "一斤染",
+   "aliases": [],
+   "readings": [
+    "いっこんぞめ"
+   ],
+   "hex": "FFD3E4",
+   "wiki": "一斤染め"
+  },
+  {
+   "name": "今様色",
+   "aliases": [],
+   "readings": [
+    "いまよういろ"
+   ],
+   "hex": "D0576B",
+   "wiki": "今様色"
+  },
+  {
+   "name": "鶯色",
+   "aliases": [],
+   "readings": [
+    "うぐいすいろ"
+   ],
+   "hex": "918D40",
+   "wiki": "鶯色"
+  },
+  {
+   "name": "鶯茶",
+   "aliases": [],
+   "readings": [
+    "うぐいすちゃ"
+   ],
+   "hex": "715C1F",
+   "wiki": "鶯茶"
+  },
+  {
+   "name": "鬱金色",
+   "aliases": [],
+   "readings": [
+    "うこんいろ"
+   ],
+   "hex": "FABF14",
+   "wiki": "鬱金色"
+  },
+  {
+   "name": "薄色",
+   "aliases": [],
+   "readings": [
+    "うすいろ"
+   ],
+   "hex": "CEB4B9",
+   "wiki": "薄色"
+  },
+  {
+   "name": "薄紅",
+   "aliases": [],
+   "readings": [
+    "うすくれない"
+   ],
+   "hex": "B15C65",
+   "wiki": "薄紅"
+  },
+  {
+   "name": "淡香",
+   "aliases": [],
+   "readings": [
+    "うすこう"
+   ],
+   "hex": "F3BF88",
+   "wiki": "淡香"
+  },
+  {
+   "name": "薄墨色",
+   "aliases": [],
+   "readings": [
+    "うすずみいろ"
+   ],
+   "hex": "A3A3A2",
+   "wiki": "薄墨色"
+  },
+  {
+   "name": "薄水色",
+   "aliases": [],
+   "readings": [
+    "うすみずいろ"
+   ],
+   "hex": "BCE1DF",
+   "wiki": "薄水色"
+  },
+  {
+   "name": "空五倍子色",
+   "aliases": [],
+   "readings": [
+    "うつぶしいろ"
+   ],
+   "hex": "9D896C",
+   "wiki": "空五倍子色"
+  },
+  {
+   "name": "卯の花色",
+   "aliases": [],
+   "readings": [
+    "うのはないろ"
+   ],
+   "hex": "FBFBF6",
+   "wiki": "卯の花色"
+  },
+  {
+   "name": "梅鼠",
+   "aliases": [],
+   "readings": [
+    "うめねずみ"
+   ],
+   "hex": "AD7984",
+   "wiki": "梅鼠"
+  },
+  {
+   "name": "裏葉柳",
+   "aliases": [],
+   "readings": [
+    "うらはやなぎ"
+   ],
+   "hex": "C1D8AC",
+   "wiki": "裏葉柳"
+  },
+  {
+   "name": "江戸茶",
+   "aliases": [],
+   "readings": [
+    "えどちゃ"
+   ],
+   "hex": "CD8C5C",
+   "wiki": "江戸茶"
+  },
+  {
+   "name": "江戸紫",
+   "aliases": [],
+   "readings": [
+    "えどむらさき"
+   ],
+   "hex": "745399",
+   "wiki": "江戸紫"
+  },
+  {
+   "name": "葡萄色",
+   "aliases": [
+    "海老色"
+   ],
+   "readings": [
+    "えびいろ"
+   ],
+   "hex": "640125",
+   "wiki": "葡萄色"
+  },
+  {
+   "name": "葡萄染",
+   "aliases": [],
+   "readings": [
+    "えびぞめ"
+   ],
+   "hex": "7A4171",
+   "wiki": "葡萄染"
+  },
+  {
+   "name": "葡萄茶",
+   "aliases": [
+    "海老茶"
+   ],
+   "readings": [
+    "えびちゃ"
+   ],
+   "hex": "6C2C2F",
+   "wiki": "葡萄色#海老茶"
+  },
+  {
+   "name": "臙脂色",
+   "aliases": [],
+   "readings": [
+    "えんじいろ"
+   ],
+   "hex": "B3424A",
+   "wiki": "えんじ色"
+  },
+  {
+   "name": "鉛丹色",
+   "aliases": [],
+   "readings": [
+    "えんたんいろ"
+   ],
+   "hex": "EC6D51",
+   "wiki": "鉛丹色"
+  },
+  {
+   "name": "老竹色",
+   "aliases": [],
+   "readings": [
+    "おいたけいろ"
+   ],
+   "hex": "769164",
+   "wiki": "老竹色"
+  },
+  {
+   "name": "楝色",
+   "aliases": [],
+   "readings": [
+    "おうちいろ"
+   ],
+   "hex": "A596C7",
+   "wiki": "楝色"
+  },
+  {
+   "name": "黄土色",
+   "aliases": [],
+   "readings": [
+    "おうどいろ"
+   ],
+   "hex": "C39143",
+   "wiki": "黄土色"
+  },
+  {
+   "name": "黄丹",
+   "aliases": [],
+   "readings": [
+    "おうに",
+    "おうたん"
+   ],
+   "hex": "F47A55",
+   "wiki": "黄丹"
+  },
+  {
+   "name": "織部色",
+   "aliases": [],
+   "readings": [
+    "おりべいろ"
+   ],
+   "hex": "125115",
+   "wiki": "織部色"
+  },
+  {
+   "name": "カーキ色",
+   "aliases": [],
+   "readings": [
+    "かーきいろ"
+   ],
+   "hex": "C3B091",
+   "wiki": "カーキ色"
+  },
+  {
+   "name": "貝紫色",
+   "aliases": [],
+   "readings": [
+    "かいむらさきいろ"
+   ],
+   "hex": "7F1184",
+   "wiki": "貝紫色"
+  },
+  {
+   "name": "柿色",
+   "aliases": [],
+   "readings": [
+    "かきいろ"
+   ],
+   "hex": "ED6D3D",
+   "wiki": "柿色"
+  },
+  {
+   "name": "柿渋色",
+   "aliases": [],
+   "readings": [
+    "かきしぶいろ"
+   ],
+   "hex": "BD7862",
+   "wiki": "柿渋色"
+  },
+  {
+   "name": "杜若色",
+   "aliases": [],
+   "readings": [
+    "かきつばたいろ"
+   ],
+   "hex": "5E3862",
+   "wiki": "カキツバタ"
+  },
+  {
+   "name": "勝色",
+   "aliases": [],
+   "readings": [
+    "かちいろ",
+    "かついろ"
+   ],
+   "hex": "4D5269",
+   "wiki": "勝色"
+  },
+  {
+   "name": "樺色",
+   "aliases": [
+    "蒲色"
+   ],
+   "readings": [
+    "かばいろ"
+   ],
+   "hex": "C5591A",
+   "wiki": "樺色"
+  },
+  {
+   "name": "樺茶",
+   "aliases": [],
+   "readings": [
+    "かばちゃ"
+   ],
+   "hex": "726250",
+   "wiki": "樺茶"
+  },
+  {
+   "name": "瓶覗",
+   "aliases": [],
+   "readings": [
+    "かめのぞき"
+   ],
+   "hex": "C5E4ED",
+   "wiki": "瓶覗き"
+  },
+  {
+   "name": "唐紅",
+   "aliases": [
+    "韓紅"
+   ],
+   "readings": [
+    "からくれない"
+   ],
+   "hex": "D93448",
+   "wiki": "唐紅"
+  },
+  {
+   "name": "芥子色",
+   "aliases": [],
+   "readings": [
+    "からしいろ"
+   ],
+   "hex": "D0AF4C",
+   "wiki": "芥子色"
+  },
+  {
+   "name": "唐茶",
+   "aliases": [],
+   "readings": [
+    "からちゃ"
+   ],
+   "hex": "A06705",
+   "wiki": "唐茶"
+  },
+  {
+   "name": "苅安色",
+   "aliases": [
+    "刈安色"
+   ],
+   "readings": [
+    "かりやすいろ"
+   ],
+   "hex": "FFD768",
+   "wiki": "苅安色"
+  },
+  {
+   "name": "土器色",
+   "aliases": [],
+   "readings": [
+    "かわらけいろ"
+   ],
+   "hex": "C37854",
+   "wiki": "土器色"
+  },
+  {
+   "name": "萱草色",
+   "aliases": [],
+   "readings": [
+    "かんぞういろ"
+   ],
+   "hex": "F8B862",
+   "wiki": "萱草色"
+  },
+  {
+   "name": "黄色",
+   "aliases": [],
+   "readings": [
+    "きいろ"
+   ],
+   "hex": "FFD400",
+   "wiki": "黄色"
+  },
+  {
+   "name": "桔梗色",
+   "aliases": [],
+   "readings": [
+    "ききょういろ"
+   ],
+   "hex": "6A4C9C",
+   "wiki": "桔梗色"
+  },
+  {
+   "name": "麹塵",
+   "aliases": [],
+   "readings": [
+    "きくじん"
+   ],
+   "hex": "BFBD9E",
+   "wiki": "麹塵"
+  },
+  {
+   "name": "狐色",
+   "aliases": [],
+   "readings": [
+    "きつねいろ"
+   ],
+   "hex": "C48847",
+   "wiki": "きつね色"
+  },
+  {
+   "name": "生成色",
+   "aliases": [],
+   "readings": [
+    "きなりいろ"
+   ],
+   "hex": "C2B280",
+   "wiki": "生成色"
+  },
+  {
+   "name": "黄蘗色",
+   "aliases": [],
+   "readings": [
+    "きはだいろ"
+   ],
+   "hex": "FCF16E",
+   "wiki": "黄蘗色"
+  },
+  {
+   "name": "黄緑色",
+   "aliases": [],
+   "readings": [
+    "きみどりいろ"
+   ],
+   "hex": "B9C42F",
+   "wiki": "黄緑"
+  },
+  {
+   "name": "伽羅色",
+   "aliases": [],
+   "readings": [
+    "きゃらいろ"
+   ],
+   "hex": "D8A373",
+   "wiki": "伽羅色"
+  },
+  {
+   "name": "京紫",
+   "aliases": [],
+   "readings": [
+    "きょうむらさき"
+   ],
+   "hex": "772F6D",
+   "wiki": "京紫"
+  },
+  {
+   "name": "金色",
+   "aliases": [],
+   "readings": [
+    "きんいろ",
+    "こんじき"
+   ],
+   "hex": "FFD700",
+   "wiki": "金色"
+  },
+  {
+   "name": "銀色",
+   "aliases": [],
+   "readings": [
+    "ぎんいろ"
+   ],
+   "hex": "C0C0C0",
+   "wiki": "銀色"
+  },
+  {
+   "name": "銀朱",
+   "aliases": [],
+   "readings": [
+    "ぎんしゅ"
+   ],
+   "hex": "F12B00",
+   "wiki": "朱色#銀朱"
+  },
+  {
+   "name": "金茶",
+   "aliases": [],
+   "readings": [
+    "きんちゃ"
+   ],
+   "hex": "E0861A",
+   "wiki": "金茶"
+  },
+  {
+   "name": "銀鼠",
+   "aliases": [],
+   "readings": [
+    "ぎんねずみ"
+   ],
+   "hex": "BBBCBF",
+   "wiki": "銀鼠"
+  },
+  {
+   "name": "草色",
+   "aliases": [],
+   "readings": [
+    "くさいろ"
+   ],
+   "hex": "7B8D42",
+   "wiki": "草色"
+  },
+  {
+   "name": "梔子色",
+   "aliases": [
+    "支子色"
+   ],
+   "readings": [
+    "くちなしいろ"
+   ],
+   "hex": "FFD768",
+   "wiki": "梔子色"
+  },
+  {
+   "name": "朽葉色",
+   "aliases": [],
+   "readings": [
+    "くちばいろ"
+   ],
+   "hex": "896A45",
+   "wiki": "朽葉"
+  },
+  {
+   "name": "栗色",
+   "aliases": [],
+   "readings": [
+    "くりいろ"
+   ],
+   "hex": "800000",
+   "wiki": "マルーン (色)"
+  },
+  {
+   "name": "涅色",
+   "aliases": [],
+   "readings": [
+    "くりいろ"
+   ],
+   "hex": "433634",
+   "wiki": "涅色"
+  },
+  {
+   "name": "栗梅",
+   "aliases": [],
+   "readings": [
+    "くりうめ"
+   ],
+   "hex": "6C1912",
+   "wiki": "栗梅"
+  },
+  {
+   "name": "胡桃色",
+   "aliases": [],
+   "readings": [
+    "くるみいろ"
+   ],
+   "hex": "A86F4C",
+   "wiki": "胡桃色"
+  },
+  {
+   "name": "紅蓮色",
+   "aliases": [],
+   "readings": [
+    "ぐれんいろ"
+   ],
+   "hex": "AD002D",
+   "wiki": "紅蓮"
+  },
+  {
+   "name": "紅色",
+   "aliases": [],
+   "readings": [
+    "くれないいろ",
+    "べにいろ"
+   ],
+   "hex": "C22047",
+   "wiki": "紅色"
+  },
+  {
+   "name": "黒",
+   "aliases": [],
+   "readings": [
+    "くろ"
+   ],
+   "hex": "000000",
+   "wiki": "黒"
+  },
+  {
+   "name": "桑染",
+   "aliases": [],
+   "readings": [
+    "くわぞめ"
+   ],
+   "hex": "DABC91",
+   "wiki": "桑染"
+  },
+  {
+   "name": "群青色",
+   "aliases": [],
+   "readings": [
+    "ぐんじょういろ"
+   ],
+   "hex": "465DAA",
+   "wiki": "群青色"
+  },
+  {
+   "name": "消炭色",
+   "aliases": [],
+   "readings": [
+    "けしずみいろ"
+   ],
+   "hex": "595045",
+   "wiki": "消炭色"
+  },
+  {
+   "name": "滅紫",
+   "aliases": [],
+   "readings": [
+    "けしむらさき",
+    "めっし"
+   ],
+   "hex": "594255",
+   "wiki": "滅紫"
+  },
+  {
+   "name": "月白",
+   "aliases": [],
+   "readings": [
+    "げっぱく"
+   ],
+   "hex": "F6F7F8",
+   "wiki": "月白"
+  },
+  {
+   "name": "憲法色",
+   "aliases": [],
+   "readings": [
+    "けんぽういろ"
+   ],
+   "hex": "543F32",
+   "wiki": "憲法色"
+  },
+  {
+   "name": "濃藍",
+   "aliases": [],
+   "readings": [
+    "こいあい",
+    "こあい"
+   ],
+   "hex": "002E4E",
+   "wiki": "濃藍"
+  },
+  {
+   "name": "香色",
+   "aliases": [],
+   "readings": [
+    "こういろ"
+   ],
+   "hex": "EFCD9A",
+   "wiki": "香色"
+  },
+  {
+   "name": "柑子色",
+   "aliases": [],
+   "readings": [
+    "こうじいろ"
+   ],
+   "hex": "FF5234",
+   "wiki": "柑子色"
+  },
+  {
+   "name": "紅梅色",
+   "aliases": [],
+   "readings": [
+    "こうばいいろ"
+   ],
+   "hex": "E86B79",
+   "wiki": "紅梅色"
+  },
+  {
+   "name": "黄櫨染",
+   "aliases": [],
+   "readings": [
+    "こうろぜん"
+   ],
+   "hex": "D99502",
+   "wiki": "黄櫨染御袍"
+  },
+  {
+   "name": "黒檀",
+   "aliases": [],
+   "readings": [
+    "こくたん"
+   ],
+   "hex": "250D00",
+   "wiki": "黒檀色"
+  },
+  {
+   "name": "国防色",
+   "aliases": [],
+   "readings": [
+    "こくぼうしょく"
+   ],
+   "hex": "7B6C3E",
+   "wiki": "国防色"
+  },
+  {
+   "name": "苔色",
+   "aliases": [],
+   "readings": [
+    "こけいろ"
+   ],
+   "hex": "78882D",
+   "wiki": "苔色"
+  },
+  {
+   "name": "焦茶",
+   "aliases": [],
+   "readings": [
+    "こげちゃ"
+   ],
+   "hex": "6A4D32",
+   "wiki": "焦茶"
+  },
+  {
+   "name": "古代紫",
+   "aliases": [],
+   "readings": [
+    "こだいむらさき"
+   ],
+   "hex": "8C6589",
+   "wiki": "貝紫色"
+  },
+  {
+   "name": "琥珀色",
+   "aliases": [],
+   "readings": [
+    "こはくいろ"
+   ],
+   "hex": "EA930A",
+   "wiki": "琥珀色"
+  },
+  {
+   "name": "媚茶",
+   "aliases": [],
+   "readings": [
+    "こびちゃ"
+   ],
+   "hex": "716246",
+   "wiki": "媚茶"
+  },
+  {
+   "name": "小麦色",
+   "aliases": [],
+   "readings": [
+    "こむぎいろ"
+   ],
+   "hex": "E4A343",
+   "wiki": "小麦色"
+  },
+  {
+   "name": "紺色",
+   "aliases": [],
+   "readings": [
+    "こんいろ"
+   ],
+   "hex": "233B6C",
+   "wiki": "紺色"
+  },
+  {
+   "name": "紺桔梗",
+   "aliases": [],
+   "readings": [
+    "こんききょう"
+   ],
+   "hex": "211E55",
+   "wiki": "桔梗色"
+  },
+  {
+   "name": "紺青色",
+   "aliases": [],
+   "readings": [
+    "こんじょういろ"
+   ],
+   "hex": "1A4472",
+   "wiki": "紺青 (色)"
+  },
+  {
+   "name": "左伊多津万色",
+   "aliases": [],
+   "readings": [
+    "さいたづまいろ"
+   ],
+   "hex": "328131",
+   "wiki": "左伊多津万色"
+  },
+  {
+   "name": "桜色",
+   "aliases": [],
+   "readings": [
+    "さくらいろ"
+   ],
+   "hex": "FEEEED",
+   "wiki": "桜色"
+  },
+  {
+   "name": "錆浅葱",
+   "aliases": [],
+   "readings": [
+    "さびあさぎ"
+   ],
+   "hex": "5C9291",
+   "wiki": "錆浅葱"
+  },
+  {
+   "name": "錆色",
+   "aliases": [],
+   "readings": [
+    "さびいろ"
+   ],
+   "hex": "6C3424",
+   "wiki": "錆色"
+  },
+  {
+   "name": "珊瑚色",
+   "aliases": [],
+   "readings": [
+    "さんごいろ"
+   ],
+   "hex": "FF7F50",
+   "wiki": "珊瑚色"
+  },
+  {
+   "name": "紫苑色",
+   "aliases": [],
+   "readings": [
+    "しおんいろ"
+   ],
+   "hex": "968ABD",
+   "wiki": "紫苑色"
+  },
+  {
+   "name": "芝翫茶",
+   "aliases": [],
+   "readings": [
+    "しかんちゃ"
+   ],
+   "hex": "AD7E4E",
+   "wiki": "芝翫茶"
+  },
+  {
+   "name": "紫紺",
+   "aliases": [],
+   "readings": [
+    "しこん"
+   ],
+   "hex": "400B36",
+   "wiki": "紫紺"
+  },
+  {
+   "name": "漆黒",
+   "aliases": [],
+   "readings": [
+    "しっこく"
+   ],
+   "hex": "080000",
+   "wiki": "漆黒"
+  },
+  {
+   "name": "東雲色",
+   "aliases": [],
+   "readings": [
+    "しののめいろ"
+   ],
+   "hex": "F19072",
+   "wiki": "東雲色"
+  },
+  {
+   "name": "赤銅色",
+   "aliases": [],
+   "readings": [
+    "しゃくどういろ"
+   ],
+   "hex": "7E0F09",
+   "wiki": "赤銅色"
+  },
+  {
+   "name": "朱色",
+   "aliases": [],
+   "readings": [
+    "しゅいろ"
+   ],
+   "hex": "EF454A",
+   "wiki": "朱色"
+  },
+  {
+   "name": "猩々緋",
+   "aliases": [],
+   "readings": [
+    "しょうじょうひ"
+   ],
+   "hex": "CE313D",
+   "wiki": "猩々緋"
+  },
+  {
+   "name": "白茶",
+   "aliases": [],
+   "readings": [
+    "しらちゃ"
+   ],
+   "hex": "DAC4A5",
+   "wiki": "白茶 (色)"
+  },
+  {
+   "name": "白",
+   "aliases": [],
+   "readings": [
+    "しろ"
+   ],
+   "hex": "FFFFFF",
+   "wiki": "白"
+  },
+  {
+   "name": "真紅",
+   "aliases": [],
+   "readings": [
+    "しんく"
+   ],
+   "hex": "B1063A",
+   "wiki": "真紅"
+  },
+  {
+   "name": "新橋色",
+   "aliases": [],
+   "readings": [
+    "しんばしいろ"
+   ],
+   "hex": "59B9C6",
+   "wiki": "新橋色"
+  },
+  {
+   "name": "蘇芳色",
+   "aliases": [],
+   "readings": [
+    "すおういろ"
+   ],
+   "hex": "973C3F",
+   "wiki": "蘇芳色"
+  },
+  {
+   "name": "煤竹色",
+   "aliases": [],
+   "readings": [
+    "すすたけいろ"
+   ],
+   "hex": "6F514C",
+   "wiki": "煤竹色"
+  },
+  {
+   "name": "雀色",
+   "aliases": [],
+   "readings": [
+    "すずめいろ"
+   ],
+   "hex": "864337",
+   "wiki": "雀色"
+  },
+  {
+   "name": "墨色",
+   "aliases": [],
+   "readings": [
+    "すみいろ"
+   ],
+   "hex": "343434",
+   "wiki": "墨色"
+  },
+  {
+   "name": "菫色",
+   "aliases": [],
+   "readings": [
+    "すみれいろ"
+   ],
+   "hex": "705DA8",
+   "wiki": "菫色"
+  },
+  {
+   "name": "青磁色",
+   "aliases": [],
+   "readings": [
+    "せいじいろ"
+   ],
+   "hex": "60B49F",
+   "wiki": "青磁色"
+  },
+  {
+   "name": "石竹色",
+   "aliases": [],
+   "readings": [
+    "せきちくいろ"
+   ],
+   "hex": "F9C1CF",
+   "wiki": "石竹色"
+  },
+  {
+   "name": "仙斎茶",
+   "aliases": [],
+   "readings": [
+    "せんさいちゃ"
+   ],
+   "hex": "474B42",
+   "wiki": "仙斎茶"
+  },
+  {
+   "name": "赭",
+   "aliases": [],
+   "readings": [
+    "そほ"
+   ],
+   "hex": "AB6953",
+   "wiki": "赭"
+  },
+  {
+   "name": "空色",
+   "aliases": [],
+   "readings": [
+    "そらいろ"
+   ],
+   "hex": "90D7EC",
+   "wiki": "空色"
+  },
+  {
+   "name": "代赭色",
+   "aliases": [],
+   "readings": [
+    "たいしゃいろ"
+   ],
+   "hex": "B36C3C",
+   "wiki": "弁柄"
+  },
+  {
+   "name": "橙色",
+   "aliases": [],
+   "readings": [
+    "だいだいいろ"
+   ],
+   "hex": "FFB74C",
+   "wiki": "橙色"
+  },
+  {
+   "name": "団十郎茶",
+   "aliases": [],
+   "readings": [
+    "だんじゅうろうちゃ"
+   ],
+   "hex": "9F563A",
+   "wiki": "柿色#団十郎茶"
+  },
+  {
+   "name": "千草色",
+   "aliases": [],
+   "readings": [
+    "ちぐさいろ"
+   ],
+   "hex": "92B5A9",
+   "wiki": "千草色"
+  },
+  {
+   "name": "茶色",
+   "aliases": [],
+   "readings": [
+    "ちゃいろ"
+   ],
+   "hex": "994C00",
+   "wiki": "茶色"
+  },
+  {
+   "name": "丁子茶",
+   "aliases": [],
+   "readings": [
+    "ちょうじちゃ"
+   ],
+   "hex": "B4866B",
+   "wiki": "丁子茶"
+  },
+  {
+   "name": "躑躅色",
+   "aliases": [],
+   "readings": [
+    "つつじいろ"
+   ],
+   "hex": "E761A4",
+   "wiki": "躑躅色"
+  },
+  {
+   "name": "露草色",
+   "aliases": [],
+   "readings": [
+    "つゆくさいろ"
+   ],
+   "hex": "21A0DB",
+   "wiki": "縹#露草色・花色"
+  },
+  {
+   "name": "鉄紺",
+   "aliases": [],
+   "readings": [
+    "てつこん"
+   ],
+   "hex": "003149",
+   "wiki": "鉄紺"
+  },
+  {
+   "name": "鴇色",
+   "aliases": [],
+   "readings": [
+    "ときいろ"
+   ],
+   "hex": "F3A696",
+   "wiki": "鴇色"
+  },
+  {
+   "name": "常磐色",
+   "aliases": [],
+   "readings": [
+    "ときわいろ"
+   ],
+   "hex": "007B43",
+   "wiki": "常磐色"
+  },
+  {
+   "name": "木賊色",
+   "aliases": [],
+   "readings": [
+    "とくさいろ"
+   ],
+   "hex": "22825D",
+   "wiki": "木賊色"
+  },
+  {
+   "name": "砥粉色",
+   "aliases": [],
+   "readings": [
+    "とのこいろ"
+   ],
+   "hex": "F4DDA5",
+   "wiki": "砥粉色"
+  },
+  {
+   "name": "鳶色",
+   "aliases": [],
+   "readings": [
+    "とびいろ"
+   ],
+   "hex": "85403A",
+   "wiki": "鳶色"
+  },
+  {
+   "name": "留紺",
+   "aliases": [],
+   "readings": [
+    "とめこん"
+   ],
+   "hex": "1C305C",
+   "wiki": "留紺"
+  },
+  {
+   "name": "鳥の子色",
+   "aliases": [],
+   "readings": [
+    "とりのこいろ"
+   ],
+   "hex": "FFF1CF",
+   "wiki": "鳥の子色"
+  },
+  {
+   "name": "苗色",
+   "aliases": [],
+   "readings": [
+    "なえいろ"
+   ],
+   "hex": "B0CA71",
+   "wiki": "苗色"
+  },
+  {
+   "name": "茄子紺",
+   "aliases": [],
+   "readings": [
+    "なすこん"
+   ],
+   "hex": "824880",
+   "wiki": "茄子紺"
+  },
+  {
+   "name": "撫子色",
+   "aliases": [],
+   "readings": [
+    "なでしこいろ"
+   ],
+   "hex": "F6ADC6",
+   "wiki": "撫子色"
+  },
+  {
+   "name": "菜の花色",
+   "aliases": [],
+   "readings": [
+    "なのはないろ"
+   ],
+   "hex": "FCD900",
+   "wiki": "菜の花色"
+  },
+  {
+   "name": "生壁色",
+   "aliases": [],
+   "readings": [
+    "なまかべいろ"
+   ],
+   "hex": "AA8C63",
+   "wiki": "生壁色"
+  },
+  {
+   "name": "鉛色",
+   "aliases": [],
+   "readings": [
+    "なまりいろ"
+   ],
+   "hex": "7B7C7D",
+   "wiki": "鉛色"
+  },
+  {
+   "name": "納戸色",
+   "aliases": [],
+   "readings": [
+    "なんどいろ"
+   ],
+   "hex": "008899",
+   "wiki": "納戸色"
+  },
+  {
+   "name": "丹色",
+   "aliases": [],
+   "readings": [
+    "にいろ"
+   ],
+   "hex": "E45E32",
+   "wiki": "丹色"
+  },
+  {
+   "name": "似紫",
+   "aliases": [],
+   "readings": [
+    "にせむらさき"
+   ],
+   "hex": "513743",
+   "wiki": "似紫"
+  },
+  {
+   "name": "鈍色",
+   "aliases": [],
+   "readings": [
+    "にびいろ"
+   ],
+   "hex": "727171",
+   "wiki": "鈍色"
+  },
+  {
+   "name": "乳白色",
+   "aliases": [],
+   "readings": [
+    "にゅうはくしょく"
+   ],
+   "hex": "FFFFFB",
+   "wiki": "乳白色"
+  },
+  {
+   "name": "濡烏",
+   "aliases": [],
+   "readings": [
+    "ぬれがらす"
+   ],
+   "hex": "000B00",
+   "wiki": "濡烏"
+  },
+  {
+   "name": "根岸色",
+   "aliases": [],
+   "readings": [
+    "ねぎしいろ"
+   ],
+   "hex": "908E65",
+   "wiki": "根岸色"
+  },
+  {
+   "name": "鼠色",
+   "aliases": [],
+   "readings": [
+    "ねずみいろ"
+   ],
+   "hex": "949495",
+   "wiki": "鼠色"
+  },
+  {
+   "name": "練色",
+   "aliases": [],
+   "readings": [
+    "ねりいろ"
+   ],
+   "hex": "FFF9E2",
+   "wiki": "練色"
+  },
+  {
+   "name": "灰色",
+   "aliases": [],
+   "readings": [
+    "はいいろ"
+   ],
+   "hex": "808080",
+   "wiki": "灰色"
+  },
+  {
+   "name": "灰桜",
+   "aliases": [],
+   "readings": [
+    "はいざくら"
+   ],
+   "hex": "E8D3D1",
+   "wiki": "桜色"
+  },
+  {
+   "name": "榛色",
+   "aliases": [],
+   "readings": [
+    "はしばみいろ"
+   ],
+   "hex": "BFA46F",
+   "wiki": "榛色"
+  },
+  {
+   "name": "肌色",
+   "aliases": [],
+   "readings": [
+    "はだいろ"
+   ],
+   "hex": "F1BB93",
+   "wiki": "肌色"
+  },
+  {
+   "name": "鳩羽色",
+   "aliases": [],
+   "readings": [
+    "はとばいろ"
+   ],
+   "hex": "95859C",
+   "wiki": "鳩羽色"
+  },
+  {
+   "name": "縹色",
+   "aliases": [],
+   "readings": [
+    "はなだいろ"
+   ],
+   "hex": "267CA7",
+   "wiki": "縹"
+  },
+  {
+   "name": "唐棣色",
+   "aliases": [],
+   "readings": [
+    "はねずいろ"
+   ],
+   "hex": "F0908D",
+   "wiki": "唐棣色"
+  },
+  {
+   "name": "薔薇色",
+   "aliases": [],
+   "readings": [
+    "ばらいろ"
+   ],
+   "hex": "E73275",
+   "wiki": "薔薇色"
+  },
+  {
+   "name": "緋色",
+   "aliases": [],
+   "readings": [
+    "ひいろ"
+   ],
+   "hex": "E54848",
+   "wiki": "緋色"
+  },
+  {
+   "name": "白群",
+   "aliases": [],
+   "readings": [
+    "びゃくぐん"
+   ],
+   "hex": "83CCD2",
+   "wiki": "白群"
+  },
+  {
+   "name": "白緑",
+   "aliases": [],
+   "readings": [
+    "びゃくろく"
+   ],
+   "hex": "DAEAD0",
+   "wiki": "白緑"
+  },
+  {
+   "name": "桧皮色",
+   "aliases": [],
+   "readings": [
+    "ひわだいろ"
+   ],
+   "hex": "7B4334",
+   "wiki": "桧皮色"
+  },
+  {
+   "name": "鶸萌黄",
+   "aliases": [],
+   "readings": [
+    "ひわもえぎ"
+   ],
+   "hex": "82AE46",
+   "wiki": "鶸萌黄"
+  },
+  {
+   "name": "深川鼠",
+   "aliases": [],
+   "readings": [
+    "ふかがわねずみ"
+   ],
+   "hex": "85A1A0",
+   "wiki": "深川鼠"
+  },
+  {
+   "name": "深緑",
+   "aliases": [],
+   "readings": [
+    "ふかみどり"
+   ],
+   "hex": "004025",
+   "wiki": "深緑"
+  },
+  {
+   "name": "藤色",
+   "aliases": [],
+   "readings": [
+    "ふじいろ"
+   ],
+   "hex": "AFB4DB",
+   "wiki": "藤色"
+  },
+  {
+   "name": "藤納戸",
+   "aliases": [],
+   "readings": [
+    "ふじなんど"
+   ],
+   "hex": "606DA1",
+   "wiki": "藤納戸"
+  },
+  {
+   "name": "藤紫",
+   "aliases": [],
+   "readings": [
+    "ふじむらさき"
+   ],
+   "hex": "9B95C9",
+   "wiki": "藤色#藤紫・藤鼠"
+  },
+  {
+   "name": "二藍",
+   "aliases": [],
+   "readings": [
+    "ふたあい"
+   ],
+   "hex": "6B4978",
+   "wiki": "二藍"
+  },
+  {
+   "name": "紅赤",
+   "aliases": [],
+   "readings": [
+    "べにあか"
+   ],
+   "hex": "E5004F",
+   "wiki": "紅赤"
+  },
+  {
+   "name": "紅樺色",
+   "aliases": [],
+   "readings": [
+    "べにかばいろ"
+   ],
+   "hex": "B63D1B",
+   "wiki": "紅樺色"
+  },
+  {
+   "name": "紅緋",
+   "aliases": [],
+   "readings": [
+    "べにひ"
+   ],
+   "hex": "F83929",
+   "wiki": "紅緋"
+  },
+  {
+   "name": "弁柄色",
+   "aliases": [],
+   "readings": [
+    "べんがらいろ"
+   ],
+   "hex": "8F2E14",
+   "wiki": "弁柄色"
+  },
+  {
+   "name": "牡丹色",
+   "aliases": [],
+   "readings": [
+    "ぼたんいろ"
+   ],
+   "hex": "E761A4",
+   "wiki": "牡丹色"
+  },
+  {
+   "name": "紛紅",
+   "aliases": [],
+   "readings": [
+    "まがいべに"
+   ],
+   "hex": "FB3C02",
+   "wiki": "紛紅"
+  },
+  {
+   "name": "枡花色",
+   "aliases": [],
+   "readings": [
+    "ますはないろ"
+   ],
+   "hex": "5B7E91",
+   "wiki": "枡花色"
+  },
+  {
+   "name": "松葉色",
+   "aliases": [],
+   "readings": [
+    "まつばいろ"
+   ],
+   "hex": "3F7735",
+   "wiki": "松葉色"
+  },
+  {
+   "name": "蜜柑色",
+   "aliases": [],
+   "readings": [
+    "みかんいろ"
+   ],
+   "hex": "F08300",
+   "wiki": "蜜柑色"
+  },
+  {
+   "name": "水浅葱",
+   "aliases": [],
+   "readings": [
+    "みずあさぎ"
+   ],
+   "hex": "8CD2BC",
+   "wiki": "水浅葱"
+  },
+  {
+   "name": "水色",
+   "aliases": [],
+   "readings": [
+    "みずいろ"
+   ],
+   "hex": "AFDFE4",
+   "wiki": "水色"
+  },
+  {
+   "name": "緑",
+   "aliases": [],
+   "readings": [
+    "みどり"
+   ],
+   "hex": "008000",
+   "wiki": "緑"
+  },
+  {
+   "name": "海松色",
+   "aliases": [],
+   "readings": [
+    "みるいろ"
+   ],
+   "hex": "6E6B41",
+   "wiki": "海松色"
+  },
+  {
+   "name": "紫",
+   "aliases": [],
+   "readings": [
+    "むらさき"
+   ],
+   "hex": "A757A8",
+   "wiki": "紫"
+  },
+  {
+   "name": "紫鈍",
+   "aliases": [],
+   "readings": [
+    "むらさきにび"
+   ],
+   "hex": "966F9C",
+   "wiki": "紫鈍"
+  },
+  {
+   "name": "萌黄色",
+   "aliases": [],
+   "readings": [
+    "もえぎいろ"
+   ],
+   "hex": "A9D159",
+   "wiki": "萌黄"
+  },
+  {
+   "name": "萌葱色",
+   "aliases": [],
+   "readings": [
+    "もえぎいろ"
+   ],
+   "hex": "006C4F",
+   "wiki": "萌黄"
+  },
+  {
+   "name": "木蘭色",
+   "aliases": [],
+   "readings": [
+    "もくらんいろ"
+   ],
+   "hex": "C7B370",
+   "wiki": "木蘭色"
+  },
+  {
+   "name": "桃色",
+   "aliases": [],
+   "readings": [
+    "ももいろ"
+   ],
+   "hex": "F58F98",
+   "wiki": "桃色"
+  },
+  {
+   "name": "百塩茶",
+   "aliases": [],
+   "readings": [
+    "ももしおちゃ"
+   ],
+   "hex": "542D24",
+   "wiki": "小豆色#百塩茶"
+  },
+  {
+   "name": "柳色",
+   "aliases": [],
+   "readings": [
+    "やなぎいろ"
+   ],
+   "hex": "A8C97F",
+   "wiki": "柳色"
+  },
+  {
+   "name": "山鳩色",
+   "aliases": [],
+   "readings": [
+    "やまばといろ"
+   ],
+   "hex": "BFBD9E",
+   "wiki": "麹塵"
+  },
+  {
+   "name": "山吹色",
+   "aliases": [],
+   "readings": [
+    "やまぶきいろ"
+   ],
+   "hex": "F8B400",
+   "wiki": "ヤマブキ"
+  },
+  {
+   "name": "雄黄色",
+   "aliases": [],
+   "readings": [
+    "ゆうおういろ"
+   ],
+   "hex": "EE9D19",
+   "wiki": "雄黄"
+  },
+  {
+   "name": "蓬色",
+   "aliases": [],
+   "readings": [
+    "よもぎいろ"
+   ],
+   "hex": "616B07",
+   "wiki": "蓬色"
+  },
+  {
+   "name": "羊羹色",
+   "aliases": [],
+   "readings": [
+    "ようかんいろ"
+   ],
+   "hex": "6D3C14",
+   "wiki": "小豆色#羊羹色"
+  },
+  {
+   "name": "駱駝色",
+   "aliases": [],
+   "readings": [
+    "らくだいろ"
+   ],
+   "hex": "BF794E",
+   "wiki": "駱駝色"
+  },
+  {
+   "name": "璃寛茶",
+   "aliases": [],
+   "readings": [
+    "りかんちゃ"
+   ],
+   "hex": "6E6636",
+   "wiki": "璃寛茶"
+  },
+  {
+   "name": "利休茶",
+   "aliases": [],
+   "readings": [
+    "りきゅうちゃ"
+   ],
+   "hex": "897845",
+   "wiki": "利休茶"
+  },
+  {
+   "name": "利休鼠",
+   "aliases": [],
+   "readings": [
+    "りきゅうねず"
+   ],
+   "hex": "888E7E",
+   "wiki": "利休鼠"
+  },
+  {
+   "name": "竜胆色",
+   "aliases": [],
+   "readings": [
+    "りんどういろ"
+   ],
+   "hex": "6967AB",
+   "wiki": "竜胆色"
+  },
+  {
+   "name": "瑠璃色",
+   "aliases": [],
+   "readings": [
+    "るりいろ"
+   ],
+   "hex": "2A5CAA",
+   "wiki": "瑠璃色"
+  },
+  {
+   "name": "瑠璃紺",
+   "aliases": [],
+   "readings": [
+    "るりこん"
+   ],
+   "hex": "224B8F",
+   "wiki": "瑠璃色"
+  },
+  {
+   "name": "檸檬色",
+   "aliases": [],
+   "readings": [
+    "れもんいろ"
+   ],
+   "hex": "FFF450",
+   "wiki": "檸檬色"
+  },
+  {
+   "name": "煉瓦色",
+   "aliases": [],
+   "readings": [
+    "れんがいろ"
+   ],
+   "hex": "AA5C3F",
+   "wiki": "煉瓦色"
+  },
+  {
+   "name": "呂色",
+   "aliases": [],
+   "readings": [
+    "ろいろ"
+   ],
+   "hex": "0C0C0C",
+   "wiki": "呂色"
+  },
+  {
+   "name": "緑青",
+   "aliases": [],
+   "readings": [
+    "ろくしょう"
+   ],
+   "hex": "5BAD92",
+   "wiki": "緑青"
+  },
+  {
+   "name": "路考茶",
+   "aliases": [],
+   "readings": [
+    "ろこうちゃ"
+   ],
+   "hex": "8C7042",
+   "wiki": "路考茶"
+  },
+  {
+   "name": "若草色",
+   "aliases": [],
+   "readings": [
+    "わかくさいろ"
+   ],
+   "hex": "ABC900",
+   "wiki": "若草色"
+  },
+  {
+   "name": "若竹色",
+   "aliases": [],
+   "readings": [
+    "わかたけいろ"
+   ],
+   "hex": "7CC28E",
+   "wiki": "若竹色"
+  },
+  {
+   "name": "若菜色",
+   "aliases": [],
+   "readings": [
+    "わかないろ"
+   ],
+   "hex": "CCDE68",
+   "wiki": "若菜色"
+  },
+  {
+   "name": "若苗色",
+   "aliases": [],
+   "readings": [
+    "わかなえいろ"
+   ],
+   "hex": "C7DC68",
+   "wiki": "若苗色"
+  },
+  {
+   "name": "若葉色",
+   "aliases": [],
+   "readings": [
+    "わかばいろ"
+   ],
+   "hex": "A4CA68",
+   "wiki": "若葉色"
+  },
+  {
+   "name": "若緑",
+   "aliases": [],
+   "readings": [
+    "わかみどり"
+   ],
+   "hex": "A5CD89",
+   "wiki": "若緑 (色)"
+  },
+  {
+   "name": "若芽色",
+   "aliases": [],
+   "readings": [
+    "わかめいろ"
+   ],
+   "hex": "E0EBAF",
+   "wiki": "若芽色"
+  },
+  {
+   "name": "山葵色",
+   "aliases": [],
+   "readings": [
+    "わさびいろ"
+   ],
+   "hex": "8EC298",
+   "wiki": "山葵色"
+  },
+  {
+   "name": "勿忘草色",
+   "aliases": [],
+   "readings": [
+    "わすれなぐさいろ"
+   ],
+   "hex": "9CC5E6",
+   "wiki": "勿忘草色"
+  }
+ ]
+}
