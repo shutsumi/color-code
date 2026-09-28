@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カラーコード（色番号）をクリックでコピー｜全色マップ・RGB変換・色一覧</title>
+<meta name="description" content="#FF69B4 のような「#」と6桁の英数字のカラーコード（色番号）を、全色マップから1クリックでコピーできる無料ツール。RGBから6桁への変換、ピンクや青などよく使う色のカラーコード一覧、HTML・CSS・ブログでの色の指定方法もまとめています。">
+<link rel="canonical" href="https://shutsumi.github.io/color-code/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="カラーコードをクリックでコピー">
+<meta property="og:title" content="カラーコード（色番号）をクリックでコピー｜全色マップ・RGB変換・色一覧">
+<meta property="og:description" content="全部の色を1枚に並べたマップから、#で始まる6桁の色番号を1クリックでコピー。登録不要・無料。">
+<meta property="og:url" content="https://shutsumi.github.io/color-code/">
+<meta property="og:image" content="https://shutsumi.github.io/color-code/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="カラーコードをクリックでコピー。全色マップと #FF4B1E の表示">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "カラーコードをクリックでコピー",
+  "url": "https://shutsumi.github.io/color-code/",
+  "description": "全色マップから#で始まる6桁のカラーコード（色番号）を1クリックでコピーできる無料ツール。RGBとHEXの変換、よく使う色のカラーコード一覧つき。",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "ja",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "「#」と6桁の英数字の色の表記は何と呼びますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "カラーコードと呼びます。16進数カラーコード、Webカラーコード、HEX（ヘックス）とも呼ばれ、色番号や色の数字と呼ばれることもあります。" } },
+    { "@type": "Question", "name": "カラーコードの「#」は必要ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "HTMLやCSSに書くときは必要です。CanvaやPowerPoint、Googleスライドなどの入力欄では、#なしの6桁だけで受け付けるものもあります。" } },
+    { "@type": "Question", "name": "大文字と小文字で色は変わりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "変わりません。#FF4B1E と #ff4b1e は同じ色です。" } },
+    { "@type": "Question", "name": "3桁のカラーコードとは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "6桁のうち2桁ずつが同じ数字のときの省略形です。#F60 は #FF6600 と同じ色になります。" } },
+    { "@type": "Question", "name": "8桁のカラーコードとは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "6桁のうしろに透明度を2桁足した表記です。#FF4B1E80 は #FF4B1E を約50%の透明度にした色です。" } },
+    { "@type": "Question", "name": "RGBの数値を6桁のカラーコードに変換するには？",
+      "acceptedAnswer": { "@type": "Answer", "text": "赤・緑・青それぞれの0〜255の数値を2桁の16進数に直して並べます。RGB(255, 75, 30) は FF・4B・1E なので #FF4B1E です。このページの変換ツールに数値を入れると自動で計算できます。" } }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#ffffff; --panel:#f5f5f4; --line:#e6e6e6; --ink:#545454; --strong:#3a3a3a; --sub:#8a8a8a; --accent:#ff4b1e;
+  --shadow:rgba(0,0,0,.18);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1d1c1b; --panel:#272625; --line:#3a3837; --ink:#dddad6; --strong:#f2f0ed; --sub:#8e8b87; --shadow:rgba(0,0,0,.5);
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;
+  font-size:15px;line-height:1.8;
+  padding-inline:16px;padding-block:28px 64px;
+}
+.wrap{max-width:1040px;margin:0 auto;display:grid;gap:36px}
+.num,.hex,code,kbd{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-variant-numeric:tabular-nums}
+a{color:inherit;text-underline-offset:3px}
+
+header{display:grid;gap:6px;border-bottom:1px dotted var(--sub);padding-bottom:16px}
+h1{font-size:clamp(20px,3.4vw,26px);font-weight:700;letter-spacing:.08em;margin:0;color:var(--strong);text-wrap:balance}
+header p{margin:0;font-size:14px}
+header p b{color:var(--accent);font-weight:700}
+nav ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px}
+nav a{color:var(--sub)}
+nav a:hover{color:var(--ink)}
+
+h2{font-size:14px;font-weight:700;letter-spacing:.1em;margin:0 0 10px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;color:var(--strong)}
+h2 small{font-weight:400;letter-spacing:0;color:var(--sub);font-size:12px}
+
+/* 全色マップ */
+.map-box{position:relative}
+#map,#gray{display:block;width:100%;cursor:crosshair;border-radius:4px;touch-action:none}
+#map{height:clamp(240px,42vw,420px)}
+#gray{height:36px;margin-top:8px}
+.tip{
+  position:absolute;pointer-events:none;transform:translate(-50%,calc(-100% - 14px));
+  background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:4px;
+  padding:4px 8px 4px 6px;font-size:13px;display:flex;align-items:center;gap:6px;white-space:nowrap;
+  box-shadow:0 2px 8px var(--shadow)
+}
+.tip i{width:14px;height:14px;border-radius:2px;display:block;border:1px solid rgba(0,0,0,.12)}
+.satrow{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap;color:var(--sub);font-size:12px}
+.satrow input{flex:1;min-width:160px;accent-color:var(--accent)}
+.satrow .num{width:3.2em;text-align:right;color:var(--ink)}
+
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+@media (max-width:760px){.row{grid-template-columns:1fr}}
+
+.picker{display:grid;gap:14px;align-content:start}
+.sv{position:relative;aspect-ratio:3/2;max-width:100%;border-radius:10px;overflow:hidden;touch-action:none;cursor:crosshair}
+.sv canvas{width:100%;height:100%;display:block}
+.bar{position:relative;height:26px;border-radius:13px;touch-action:none;cursor:pointer;
+  background:linear-gradient(90deg,#f00,#ff0 16.66%,#0f0 33.33%,#0ff 50%,#00f 66.66%,#f0f 83.33%,#f00)}
+.thumb{position:absolute;width:22px;height:22px;border-radius:50%;border:3px solid #fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,.25),0 1px 4px rgba(0,0,0,.3);transform:translate(-50%,-50%);pointer-events:none}
+.bar .thumb{top:50%;width:26px;height:26px}
+.opts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px}
+.opts label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.opts input{accent-color:var(--accent);width:16px;height:16px}
+
+.current{display:grid;gap:14px;align-content:start}
+.big{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
+  height:150px;border-radius:10px;border:1px solid var(--line);padding:14px 16px;cursor:pointer;
+  font:inherit;text-align:left;width:100%
+}
+.big .hex{font-size:34px;font-weight:700;letter-spacing:.06em;line-height:1}
+.big span:last-child{font-size:12px;opacity:.85}
+.big:focus-visible,button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fmts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fmt{
+  background:var(--panel);border:1px solid transparent;border-radius:6px;padding:8px 10px;cursor:pointer;
+  color:var(--ink);font:inherit;text-align:left;display:grid;min-width:0
+}
+.fmt:hover{border-color:var(--line)}
+.fmt b{font-size:10px;letter-spacing:.14em;color:var(--sub);font-weight:700;line-height:1.6}
+.fmt code{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inrow{display:flex;gap:8px;flex-wrap:wrap}
+.field{
+  flex:1;min-width:0;font:inherit;font-family:Lato,sans-serif;font-size:16px;letter-spacing:.04em;
+  padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)
+}
+.field.bad{border-color:var(--accent)}
+.btn{font:inherit;font-size:13px;padding:8px 12px;border-radius:6px;border:1px solid var(--line);
+  background:var(--bg);color:var(--ink);cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--sub)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{width:36px;height:36px;border-radius:6px;border:1px solid rgba(0,0,0,.1);cursor:pointer;padding:0}
+.chip:hover{transform:translateY(-1px);box-shadow:0 2px 6px var(--shadow)}
+.empty{color:var(--sub);font-size:12px;margin:0}
+.linkbtn{background:none;border:0;color:var(--sub);font:inherit;font-size:12px;cursor:pointer;text-decoration:underline;padding:0}
+
+/* 読みもの */
+.article{display:grid;gap:44px;border-top:1px dotted var(--sub);padding-top:36px}
+.article section{display:grid;gap:12px;max-width:760px}
+.article section.wide{max-width:none}
+.article h2{font-size:clamp(18px,2.6vw,21px);letter-spacing:.06em;margin:0}
+.article h3{font-size:15px;margin:10px 0 0;color:var(--strong)}
+.article p{margin:0}
+.lead{color:var(--sub);font-size:13px}
+.note{font-size:13px;color:var(--sub)}
+code.inline{background:var(--panel);padding:1px 6px;border-radius:4px;font-size:.92em}
+pre{background:var(--panel);border-radius:6px;padding:12px 14px;margin:0;overflow-x:auto;font-size:13px;line-height:1.7}
+pre code{font-family:Menlo,Consolas,monospace}
+
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:520px}
+.part{border:1px solid var(--line);border-radius:6px;padding:10px 12px;display:grid;gap:2px}
+.part b{font-family:Lato,sans-serif;font-size:24px;letter-spacing:.06em;color:var(--strong);line-height:1.2}
+.part span{font-size:12px;color:var(--sub)}
+.part i{display:block;height:4px;border-radius:2px;margin-top:4px}
+
+.conv{display:flex;flex-wrap:wrap;align-items:end;gap:10px;background:var(--panel);border-radius:8px;padding:14px}
+.conv label{display:grid;gap:2px;font-size:12px;color:var(--sub)}
+.conv input{width:5.5em}
+.conv .out{display:flex;align-items:center;gap:10px;margin-left:auto}
+.conv .out i{width:40px;height:40px;border-radius:6px;border:1px solid rgba(0,0,0,.1)}
+.conv .out b{font-family:Lato,sans-serif;font-size:22px;letter-spacing:.06em;color:var(--strong);min-width:5.6em}
+@media (max-width:520px){.conv .out{margin-left:0;width:100%}}
+
+.groups{display:grid;gap:26px}
+.group h3{margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.group h3 i{width:10px;height:10px;border-radius:50%}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.sw{
+  display:flex;align-items:center;gap:10px;background:none;border:1px solid var(--line);border-radius:6px;
+  padding:7px 9px;cursor:pointer;color:var(--ink);font:inherit;font-size:13px;text-align:left;min-width:0
+}
+.sw:hover{border-color:var(--sub)}
+.sw i{width:30px;height:30px;border-radius:4px;flex:none;border:1px solid rgba(0,0,0,.1)}
+.sw span{display:grid;line-height:1.35;min-width:0}
+.sw code{font-size:12px;color:var(--sub)}
+.sw small{font-size:10px;color:var(--sub)}
+
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.howto div{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:6px;align-content:start}
+.howto h3{margin:0}
+.howto p{font-size:14px}
+
+details{border-bottom:1px solid var(--line);padding-block:10px}
+summary{cursor:pointer;font-weight:700;color:var(--strong)}
+details p{margin-top:8px}
+
+footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:var(--sub);display:grid;gap:4px}
+
+.toast{
+  position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);
+  background:var(--strong);color:var(--bg);border-radius:6px;padding:10px 16px 10px 12px;
+  display:flex;align-items:center;gap:10px;font-size:14px;opacity:0;pointer-events:none;
+  transition:opacity .18s,transform .18s;z-index:10;max-width:calc(100% - 32px)
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast i{width:18px;height:18px;border-radius:3px;border:1px solid rgba(255,255,255,.4);flex:none}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}.chip:hover{transform:none}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>カラーコード（色番号）をクリックでコピー</h1>
+    <p><b>#FF4B1E</b> のような「#」と6桁の英数字の色番号を、全色マップから選んでそのままコピーできます。登録不要・無料です。</p>
+    <nav aria-label="ページ内の目次">
+      <ul>
+        <li><a href="#about">カラーコードとは</a></li>
+        <li><a href="#read">6桁の読み方</a></li>
+        <li><a href="#convert">RGB→6桁変換</a></li>
+        <li><a href="#list">よく使う色の一覧</a></li>
+        <li><a href="#howto">HTML・ブログでの指定方法</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap" style="gap:36px">
+    <section id="tool" aria-label="カラーコードを選んでコピーする">
+      <h2>全色マップ <small>横が色相、縦が明るさ。クリックすると色番号がコピーされます</small></h2>
+      <div class="map-box" id="mapBox">
+        <canvas id="map" aria-label="全色マップ。クリックでカラーコードをコピー"></canvas>
+        <canvas id="gray" aria-label="白から黒のグレー。クリックでカラーコードをコピー"></canvas>
+        <div class="tip" id="tip" hidden><i></i><span class="hex"></span></div>
+      </div>
+      <div class="satrow">
+        <span>鮮やかさ</span>
+        <input type="range" id="sat" min="0" max="100" value="100" aria-label="マップの鮮やかさ">
+        <span class="num" id="satVal">100%</span>
+      </div>
+      <noscript><p class="note">このツールはJavaScriptを有効にすると使えます。</p></noscript>
+    </section>
+
+    <div class="row">
+      <section class="picker">
+        <div>
+          <h2>微調整 <small>四角の中と虹色のバーをドラッグして選ぶ</small></h2>
+          <div class="sv" id="sv"><canvas id="svCanvas"></canvas><div class="thumb" id="svThumb"></div></div>
+        </div>
+        <div class="bar" id="hue" aria-label="色相"><div class="thumb" id="hueThumb"></div></div>
+        <div class="opts">
+          <label><input type="checkbox" id="optAuto" checked>指を離したら自動でコピー</label>
+          <label><input type="checkbox" id="optHash" checked>先頭に # をつける</label>
+        </div>
+      </section>
+
+      <section class="current">
+        <h2>選んだ色</h2>
+        <button class="big" id="big" type="button" aria-label="選んだ色のカラーコードをコピー">
+          <span class="hex" id="bigHex">#FF4B1E</span><span>クリックでコピー</span>
+        </button>
+        <div class="fmts">
+          <button class="fmt" type="button" data-f="hex"><b>HEX</b><code id="fHex"></code></button>
+          <button class="fmt" type="button" data-f="rgb"><b>RGB</b><code id="fRgb"></code></button>
+          <button class="fmt" type="button" data-f="hsl"><b>HSL</b><code id="fHsl"></code></button>
+        </div>
+        <div class="inrow">
+          <input id="hexIn" class="field" type="text" autocomplete="off" spellcheck="false" placeholder="カラーコードを入れて表示（例 ff69b4）" aria-label="カラーコードを入力">
+          <button class="btn" id="eye" type="button" hidden>スポイト</button>
+        </div>
+      </section>
+    </div>
+
+    <section>
+      <h2>コピーした色 <small>最新30色まで。クリックでもう一度コピー</small> <button class="linkbtn" id="clearHist" type="button" hidden>履歴を消す</button></h2>
+      <div class="chips" id="hist"></div>
+      <p class="empty" id="histEmpty">まだありません。色をコピーするとここに並びます。</p>
+    </section>
+
+    <article class="article">
+      <section id="about">
+        <h2>「#」と6桁の英数字の色番号は「カラーコード」</h2>
+        <p><code class="inline">#FF4B1E</code> のように、シャープ（ハッシュタグと同じ「#」）のあとに6桁の英数字が続く色の表記は、<strong>カラーコード</strong>と呼ばれます。正式には<strong>16進数カラーコード</strong>、Webで使うことから<strong>Webカラーコード</strong>、英語では<strong>HEX</strong>（ヘックス）とも言います。</p>
+        <p>「色番号」「色の数字」「カラー番号」と呼ぶ人も多く、どれも同じものを指しています。HTMLやCSSでWebサイトやブログの文字色を決めるときのほか、Canva・PowerPoint・Googleスライド・Figmaなどのデザインツールでも、この6桁を入れれば同じ色を正確に再現できます。</p>
+      </section>
+
+      <section id="read">
+        <h2>6桁の読み方：2桁ずつ赤・緑・青の量</h2>
+        <p>6桁は2桁ずつ3つに分かれていて、左から<strong>赤（R）・緑（G）・青（B）</strong>の光の量を表しています。それぞれ <code class="inline">00</code>（まったく無い）から <code class="inline">FF</code>（最大）までの256段階です。数字の0〜9に加えてA〜Fを使うのは16進数だからで、Aが10、Fが15にあたります。</p>
+        <p>いま上で選んでいる色を分解すると、次のようになります。</p>
+        <div class="parts" aria-live="polite">
+          <div class="part"><b id="pR">FF</b><span>赤 R ＝ <span class="num" id="pRd">255</span></span><i id="pRb" style="background:#f00"></i></div>
+          <div class="part"><b id="pG">4B</b><span>緑 G ＝ <span class="num" id="pGd">75</span></span><i id="pGb" style="background:#0f0"></i></div>
+          <div class="part"><b id="pB">1E</b><span>青 B ＝ <span class="num" id="pBd">30</span></span><i id="pBb" style="background:#00f"></i></div>
+        </div>
+        <p>256 × 256 × 256 で、カラーコードで表せる色は<strong>約1677万色</strong>あります。<code class="inline">#000000</code> がすべて0の黒、<code class="inline">#FFFFFF</code> がすべて最大の白です。</p>
+      </section>
+
+      <section id="convert">
+        <h2>RGBの数値を6桁のカラーコードに変換</h2>
+        <p class="lead">0〜255の数値を入れると、6桁のカラーコードに変換します。逆に6桁からRGBを知りたいときは、上の「選んだ色」の入力欄にカラーコードを入れてください。</p>
+        <div class="conv">
+          <label for="cR">R（赤）<input id="cR" class="field" type="number" min="0" max="255" value="255" inputmode="numeric"></label>
+          <label for="cG">G（緑）<input id="cG" class="field" type="number" min="0" max="255" value="75" inputmode="numeric"></label>
+          <label for="cB">B（青）<input id="cB" class="field" type="number" min="0" max="255" value="30" inputmode="numeric"></label>
+          <div class="out"><i id="cSw"></i><b id="cHex">#FF4B1E</b><button class="btn" id="cCopy" type="button">コピー</button></div>
+        </div>
+        <p class="note">計算のしかた：それぞれの数値を16で割り、商と余りを16進数の1文字（10＝A … 15＝F）に直して並べます。75なら 75 ÷ 16 ＝ 4 余り 11 なので「4B」です。</p>
+      </section>
+
+      <section id="list" class="wide">
+        <h2>よく使う色のカラーコード一覧</h2>
+        <p class="lead">クリックするとカラーコードがコピーされます。英語名はHTML・CSSでそのまま色名として使えるものです。「和色」は日本の伝統色で、一般に使われている値を載せています。</p>
+        <div class="groups">
+          <div class="group" id="list-red">
+            <h3><i style="background:#FF0000"></i>赤のカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="FF0000" aria-label="レッド #FF0000 をコピー"><i style="background:#FF0000"></i><span>レッド<code>#FF0000</code><small>red</small></span></button>
+              <button class="sw" type="button" data-hex="DC143C" aria-label="クリムゾン #DC143C をコピー"><i style="background:#DC143C"></i><span>クリムゾン<code>#DC143C</code><small>crimson</small></span></button>
+              <button class="sw" type="button" data-hex="FF6347" aria-label="トマト #FF6347 をコピー"><i style="background:#FF6347"></i><span>トマト<code>#FF6347</code><small>tomato</small></span></button>
+              <button class="sw" type="button" data-hex="B22222" aria-label="ファイアブリック #B22222 をコピー"><i style="background:#B22222"></i><span>ファイアブリック<code>#B22222</code><small>firebrick</small></span></button>
+              <button class="sw" type="button" data-hex="8B0000" aria-label="ダークレッド #8B0000 をコピー"><i style="background:#8B0000"></i><span>ダークレッド<code>#8B0000</code><small>darkred</small></span></button>
+              <button class="sw" type="button" data-hex="B7282E" aria-label="茜色 #B7282E をコピー"><i style="background:#B7282E"></i><span>茜色<code>#B7282E</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-pink">
+            <h3><i style="background:#FF69B4"></i>ピンクのカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="FFC0CB" aria-label="ピンク #FFC0CB をコピー"><i style="background:#FFC0CB"></i><span>ピンク<code>#FFC0CB</code><small>pink</small></span></button>
+              <button class="sw" type="button" data-hex="FFB6C1" aria-label="ライトピンク #FFB6C1 をコピー"><i style="background:#FFB6C1"></i><span>ライトピンク<code>#FFB6C1</code><small>lightpink</small></span></button>
+              <button class="sw" type="button" data-hex="FF69B4" aria-label="ホットピンク #FF69B4 をコピー"><i style="background:#FF69B4"></i><span>ホットピンク<code>#FF69B4</code><small>hotpink</small></span></button>
+              <button class="sw" type="button" data-hex="FF1493" aria-label="ディープピンク #FF1493 をコピー"><i style="background:#FF1493"></i><span>ディープピンク<code>#FF1493</code><small>deeppink</small></span></button>
+              <button class="sw" type="button" data-hex="C71585" aria-label="ミディアムバイオレットレッド #C71585 をコピー"><i style="background:#C71585"></i><span>ミディアムバイオレットレッド<code>#C71585</code><small>mediumvioletred</small></span></button>
+              <button class="sw" type="button" data-hex="FEF4F4" aria-label="桜色 #FEF4F4 をコピー"><i style="background:#FEF4F4"></i><span>桜色<code>#FEF4F4</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="F09199" aria-label="桃色 #F09199 をコピー"><i style="background:#F09199"></i><span>桃色<code>#F09199</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-orange">
+            <h3><i style="background:#FFA500"></i>オレンジのカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="FFA500" aria-label="オレンジ #FFA500 をコピー"><i style="background:#FFA500"></i><span>オレンジ<code>#FFA500</code><small>orange</small></span></button>
+              <button class="sw" type="button" data-hex="FF8C00" aria-label="ダークオレンジ #FF8C00 をコピー"><i style="background:#FF8C00"></i><span>ダークオレンジ<code>#FF8C00</code><small>darkorange</small></span></button>
+              <button class="sw" type="button" data-hex="FF7F50" aria-label="コーラル #FF7F50 をコピー"><i style="background:#FF7F50"></i><span>コーラル<code>#FF7F50</code><small>coral</small></span></button>
+              <button class="sw" type="button" data-hex="FFA07A" aria-label="ライトサーモン #FFA07A をコピー"><i style="background:#FFA07A"></i><span>ライトサーモン<code>#FFA07A</code><small>lightsalmon</small></span></button>
+              <button class="sw" type="button" data-hex="EB6101" aria-label="朱色 #EB6101 をコピー"><i style="background:#EB6101"></i><span>朱色<code>#EB6101</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-yellow">
+            <h3><i style="background:#FFD700"></i>黄色のカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="FFFF00" aria-label="イエロー #FFFF00 をコピー"><i style="background:#FFFF00"></i><span>イエロー<code>#FFFF00</code><small>yellow</small></span></button>
+              <button class="sw" type="button" data-hex="FFD700" aria-label="ゴールド #FFD700 をコピー"><i style="background:#FFD700"></i><span>ゴールド<code>#FFD700</code><small>gold</small></span></button>
+              <button class="sw" type="button" data-hex="F0E68C" aria-label="カーキ #F0E68C をコピー"><i style="background:#F0E68C"></i><span>カーキ<code>#F0E68C</code><small>khaki</small></span></button>
+              <button class="sw" type="button" data-hex="FFFACD" aria-label="レモンシフォン #FFFACD をコピー"><i style="background:#FFFACD"></i><span>レモンシフォン<code>#FFFACD</code><small>lemonchiffon</small></span></button>
+              <button class="sw" type="button" data-hex="F8B500" aria-label="山吹色 #F8B500 をコピー"><i style="background:#F8B500"></i><span>山吹色<code>#F8B500</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-green">
+            <h3><i style="background:#228B22"></i>緑のカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="00FF00" aria-label="ライム #00FF00 をコピー"><i style="background:#00FF00"></i><span>ライム<code>#00FF00</code><small>lime</small></span></button>
+              <button class="sw" type="button" data-hex="008000" aria-label="グリーン #008000 をコピー"><i style="background:#008000"></i><span>グリーン<code>#008000</code><small>green</small></span></button>
+              <button class="sw" type="button" data-hex="228B22" aria-label="フォレストグリーン #228B22 をコピー"><i style="background:#228B22"></i><span>フォレストグリーン<code>#228B22</code><small>forestgreen</small></span></button>
+              <button class="sw" type="button" data-hex="2E8B57" aria-label="シーグリーン #2E8B57 をコピー"><i style="background:#2E8B57"></i><span>シーグリーン<code>#2E8B57</code><small>seagreen</small></span></button>
+              <button class="sw" type="button" data-hex="90EE90" aria-label="ライトグリーン #90EE90 をコピー"><i style="background:#90EE90"></i><span>ライトグリーン<code>#90EE90</code><small>lightgreen</small></span></button>
+              <button class="sw" type="button" data-hex="C3D825" aria-label="若草色 #C3D825 をコピー"><i style="background:#C3D825"></i><span>若草色<code>#C3D825</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="AACF53" aria-label="萌黄 #AACF53 をコピー"><i style="background:#AACF53"></i><span>萌黄<code>#AACF53</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-lightblue">
+            <h3><i style="background:#87CEEB"></i>水色のカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="87CEEB" aria-label="スカイブルー #87CEEB をコピー"><i style="background:#87CEEB"></i><span>スカイブルー<code>#87CEEB</code><small>skyblue</small></span></button>
+              <button class="sw" type="button" data-hex="ADD8E6" aria-label="ライトブルー #ADD8E6 をコピー"><i style="background:#ADD8E6"></i><span>ライトブルー<code>#ADD8E6</code><small>lightblue</small></span></button>
+              <button class="sw" type="button" data-hex="00FFFF" aria-label="シアン #00FFFF をコピー"><i style="background:#00FFFF"></i><span>シアン<code>#00FFFF</code><small>cyan</small></span></button>
+              <button class="sw" type="button" data-hex="40E0D0" aria-label="ターコイズ #40E0D0 をコピー"><i style="background:#40E0D0"></i><span>ターコイズ<code>#40E0D0</code><small>turquoise</small></span></button>
+              <button class="sw" type="button" data-hex="BCE2E8" aria-label="水色 #BCE2E8 をコピー"><i style="background:#BCE2E8"></i><span>水色<code>#BCE2E8</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="A0D8EF" aria-label="空色 #A0D8EF をコピー"><i style="background:#A0D8EF"></i><span>空色<code>#A0D8EF</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-blue">
+            <h3><i style="background:#4169E1"></i>青のカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="0000FF" aria-label="ブルー #0000FF をコピー"><i style="background:#0000FF"></i><span>ブルー<code>#0000FF</code><small>blue</small></span></button>
+              <button class="sw" type="button" data-hex="4169E1" aria-label="ロイヤルブルー #4169E1 をコピー"><i style="background:#4169E1"></i><span>ロイヤルブルー<code>#4169E1</code><small>royalblue</small></span></button>
+              <button class="sw" type="button" data-hex="1E90FF" aria-label="ドジャーブルー #1E90FF をコピー"><i style="background:#1E90FF"></i><span>ドジャーブルー<code>#1E90FF</code><small>dodgerblue</small></span></button>
+              <button class="sw" type="button" data-hex="000080" aria-label="ネイビー #000080 をコピー"><i style="background:#000080"></i><span>ネイビー<code>#000080</code><small>navy</small></span></button>
+              <button class="sw" type="button" data-hex="165E83" aria-label="藍色 #165E83 をコピー"><i style="background:#165E83"></i><span>藍色<code>#165E83</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="223A70" aria-label="紺色 #223A70 をコピー"><i style="background:#223A70"></i><span>紺色<code>#223A70</code><small>和色</small></span></button>
+              <button class="sw" type="button" data-hex="1E50A2" aria-label="瑠璃色 #1E50A2 をコピー"><i style="background:#1E50A2"></i><span>瑠璃色<code>#1E50A2</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-purple">
+            <h3><i style="background:#800080"></i>紫のカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="800080" aria-label="パープル #800080 をコピー"><i style="background:#800080"></i><span>パープル<code>#800080</code><small>purple</small></span></button>
+              <button class="sw" type="button" data-hex="EE82EE" aria-label="バイオレット #EE82EE をコピー"><i style="background:#EE82EE"></i><span>バイオレット<code>#EE82EE</code><small>violet</small></span></button>
+              <button class="sw" type="button" data-hex="8A2BE2" aria-label="ブルーバイオレット #8A2BE2 をコピー"><i style="background:#8A2BE2"></i><span>ブルーバイオレット<code>#8A2BE2</code><small>blueviolet</small></span></button>
+              <button class="sw" type="button" data-hex="E6E6FA" aria-label="ラベンダー #E6E6FA をコピー"><i style="background:#E6E6FA"></i><span>ラベンダー<code>#E6E6FA</code><small>lavender</small></span></button>
+              <button class="sw" type="button" data-hex="BBBCDE" aria-label="藤色 #BBBCDE をコピー"><i style="background:#BBBCDE"></i><span>藤色<code>#BBBCDE</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-brown">
+            <h3><i style="background:#A0522D"></i>茶色のカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="A52A2A" aria-label="ブラウン #A52A2A をコピー"><i style="background:#A52A2A"></i><span>ブラウン<code>#A52A2A</code><small>brown</small></span></button>
+              <button class="sw" type="button" data-hex="A0522D" aria-label="シエナ #A0522D をコピー"><i style="background:#A0522D"></i><span>シエナ<code>#A0522D</code><small>sienna</small></span></button>
+              <button class="sw" type="button" data-hex="D2691E" aria-label="チョコレート #D2691E をコピー"><i style="background:#D2691E"></i><span>チョコレート<code>#D2691E</code><small>chocolate</small></span></button>
+              <button class="sw" type="button" data-hex="D2B48C" aria-label="タン #D2B48C をコピー"><i style="background:#D2B48C"></i><span>タン<code>#D2B48C</code><small>tan</small></span></button>
+              <button class="sw" type="button" data-hex="F5F5DC" aria-label="ベージュ #F5F5DC をコピー"><i style="background:#F5F5DC"></i><span>ベージュ<code>#F5F5DC</code><small>beige</small></span></button>
+              <button class="sw" type="button" data-hex="96514D" aria-label="小豆色 #96514D をコピー"><i style="background:#96514D"></i><span>小豆色<code>#96514D</code><small>和色</small></span></button>
+            </div>
+          </div>
+          <div class="group" id="list-mono">
+            <h3><i style="background:#808080"></i>白・黒・グレーのカラーコード</h3>
+            <div class="swatches">
+              <button class="sw" type="button" data-hex="FFFFFF" aria-label="ホワイト #FFFFFF をコピー"><i style="background:#FFFFFF"></i><span>ホワイト<code>#FFFFFF</code><small>white</small></span></button>
+              <button class="sw" type="button" data-hex="000000" aria-label="ブラック #000000 をコピー"><i style="background:#000000"></i><span>ブラック<code>#000000</code><small>black</small></span></button>
+              <button class="sw" type="button" data-hex="808080" aria-label="グレー #808080 をコピー"><i style="background:#808080"></i><span>グレー<code>#808080</code><small>gray</small></span></button>
+              <button class="sw" type="button" data-hex="C0C0C0" aria-label="シルバー #C0C0C0 をコピー"><i style="background:#C0C0C0"></i><span>シルバー<code>#C0C0C0</code><small>silver</small></span></button>
+              <button class="sw" type="button" data-hex="D3D3D3" aria-label="ライトグレー #D3D3D3 をコピー"><i style="background:#D3D3D3"></i><span>ライトグレー<code>#D3D3D3</code><small>lightgray</small></span></button>
+              <button class="sw" type="button" data-hex="A9A9A9" aria-label="ダークグレー #A9A9A9 をコピー"><i style="background:#A9A9A9"></i><span>ダークグレー<code>#A9A9A9</code><small>darkgray</small></span></button>
+              <button class="sw" type="button" data-hex="FBFAF5" aria-label="生成り色 #FBFAF5 をコピー"><i style="background:#FBFAF5"></i><span>生成り色<code>#FBFAF5</code><small>和色</small></span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="howto">
+        <h2>カラーコードの使い方（HTML・CSS・ブログ・デザインツール）</h2>
+        <h3>HTMLで文字色を指定する</h3>
+        <pre><code>&lt;span style="color: #FF4B1E;"&gt;この文字がオレンジ色になります&lt;/span&gt;</code></pre>
+        <h3>CSSで背景色や文字色を指定する</h3>
+        <pre><code>.box {
+  color: #545454;           /* 文字色 */
+  background-color: #F5F5F4; /* 背景色 */
+  border: 1px solid #E6E6E6; /* 線の色 */
+}</code></pre>
+        <p class="note">CSSでは <code class="inline">#FF4B1E</code> のほか、<code class="inline">rgb(255, 75, 30)</code> や、一覧にある <code class="inline">hotpink</code> のような色名でも書けます。</p>
+        <h3>ブログやデザインツールで使う</h3>
+        <div class="howto">
+          <div><h3>WordPress</h3><p>ブロックを選び、右側の「スタイル」→「色」で文字や背景を選びます。カラーピッカーを開くと、カラーコードを入れる欄があります。</p></div>
+          <div><h3>Canva</h3><p>色のパネルで「＋」（新しい色を追加）を押し、#の欄にカラーコードを貼り付けます。</p></div>
+          <div><h3>PowerPoint</h3><p>文字や図形の色で「その他の色」→「ユーザー設定」を開き、「16 進」の欄に入れます。</p></div>
+          <div><h3>Googleスライド</h3><p>色のメニューで「カスタム」の「＋」を押し、16進数の欄にカラーコードを入れます。</p></div>
+        </div>
+        <p class="note">ツールによっては「#」を付けずに6桁だけを入れる欄もあります。そのときは上の「先頭に # をつける」のチェックを外してからコピーすると便利です。</p>
+      </section>
+
+      <section id="faq">
+        <h2>よくある質問</h2>
+        <div>
+          <details open><summary>「#」と6桁の英数字の色の表記は何と呼びますか？</summary><p>カラーコードと呼びます。16進数カラーコード、Webカラーコード、HEX（ヘックス）とも呼ばれ、色番号や色の数字と呼ばれることもあります。</p></details>
+          <details><summary>カラーコードの「#」は必要ですか？</summary><p>HTMLやCSSに書くときは必要です。CanvaやPowerPoint、Googleスライドなどの入力欄では、#なしの6桁だけで受け付けるものもあります。</p></details>
+          <details><summary>大文字と小文字で色は変わりますか？</summary><p>変わりません。<code class="inline">#FF4B1E</code> と <code class="inline">#ff4b1e</code> は同じ色です。</p></details>
+          <details><summary>3桁のカラーコードとは何ですか？</summary><p>6桁のうち2桁ずつが同じ数字のときの省略形です。<code class="inline">#F60</code> は <code class="inline">#FF6600</code> と同じ色になります。このページの入力欄に3桁を入れても表示できます。</p></details>
+          <details><summary>8桁のカラーコードとは何ですか？</summary><p>6桁のうしろに透明度を2桁足した表記です。<code class="inline">#FF4B1E80</code> は <code class="inline">#FF4B1E</code> を約50%の透明度にした色です。</p></details>
+          <details><summary>RGBの数値を6桁のカラーコードに変換するには？</summary><p>赤・緑・青それぞれの0〜255の数値を2桁の16進数に直して並べます。RGB(255, 75, 30) は FF・4B・1E なので <code class="inline">#FF4B1E</code> です。<a href="#convert">変換ツール</a>に数値を入れると自動で計算できます。</p></details>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>コピーした色の履歴と設定は、お使いのブラウザの中にだけ保存されます。外部には送信しません。</p>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><i></i><span></span></div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const clamp = (n, a, b) => Math.min(b, Math.max(a, n));
+
+  // ---- 色の変換 ----
+  function hsvToRgb(h, s, v) {
+    const f = n => { const k = (n + h / 60) % 6; return v - v * s * Math.max(0, Math.min(k, 4 - k, 1)); };
+    return [f(5), f(3), f(1)].map(x => Math.round(x * 255));
+  }
+  function hslToRgb(h, s, l) {
+    const a = s * Math.min(l, 1 - l);
+    const f = n => { const k = (n + h / 30) % 12; return l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)); };
+    return [f(0), f(8), f(4)].map(x => Math.round(x * 255));
+  }
+  function rgbToHsv([r, g, b]) {
+    r /= 255; g /= 255; b /= 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+    let h = 0;
+    if (d) h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+    return { h: (h * 60 + 360) % 360, s: mx ? d / mx : 0, v: mx };
+  }
+  function rgbToHsl([r, g, b]) {
+    r /= 255; g /= 255; b /= 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, l = (mx + mn) / 2;
+    let h = 0;
+    if (d) h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+    const s = d ? d / (1 - Math.abs(2 * l - 1)) : 0;
+    return [Math.round((h * 60 + 360) % 360), Math.round(s * 100), Math.round(l * 100)];
+  }
+  const hex2 = x => x.toString(16).padStart(2, '0').toUpperCase();
+  const toHex = rgb => rgb.map(hex2).join('');
+  function parseHex(str) {
+    let s = String(str).trim().replace(/^#/, '');
+    if (/^[0-9a-f]{3}$/i.test(s)) s = s.split('').map(c => c + c).join('');
+    if (/^[0-9a-f]{8}$/i.test(s)) s = s.slice(0, 6);
+    if (!/^[0-9a-f]{6}$/i.test(s)) return null;
+    return [0, 2, 4].map(i => parseInt(s.slice(i, i + 2), 16));
+  }
+  const lum = ([r, g, b]) => (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // ---- 設定（このブラウザだけに保存） ----
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+  };
+  const optHash = $('optHash'), optAuto = $('optAuto');
+  optHash.checked = store.get('cc-hash', true);
+  optAuto.checked = store.get('cc-auto', true);
+  optHash.onchange = () => { store.set('cc-hash', optHash.checked); render(); renderHist(); };
+  optAuto.onchange = () => store.set('cc-auto', optAuto.checked);
+  const fmtHex = hex => (optHash.checked ? '#' : '') + hex;
+
+  // ---- コピー ----
+  const toast = $('toast');
+  let toastTimer;
+  function showToast(hex, text) {
+    toast.querySelector('i').style.background = '#' + hex;
+    toast.querySelector('span').textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 1600);
+  }
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch {}
+    ta.remove(); return ok;
+  }
+  function copy(text, hex) {
+    const done = () => { showToast(hex, text + ' をコピーしました'); addHistory(hex); };
+    const fail = () => fallbackCopy(text) ? done() : showToast(hex, 'コピーできませんでした。' + text + ' を手で選んでください');
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fail);
+    else fail();
+  }
+
+  // ---- 状態 ----
+  const state = rgbToHsv(parseHex('FF4B1E'));
+  const currentRgb = () => hsvToRgb(state.h, state.s, state.v);
+  function setRgb(rgb) {
+    const h = state.h;
+    Object.assign(state, rgbToHsv(rgb));
+    if (!state.s || !state.v) state.h = h; // 白・黒・グレーは色相を保つ
+    render(); drawSV();
+  }
+
+  function render() {
+    const rgb = currentRgb(), hex = toHex(rgb), hsl = rgbToHsl(rgb);
+    const big = $('big');
+    big.style.background = '#' + hex;
+    big.style.color = lum(rgb) > 0.6 ? '#2b2b2b' : '#ffffff';
+    $('bigHex').textContent = fmtHex(hex);
+    $('fHex').textContent = fmtHex(hex);
+    $('fRgb').textContent = `rgb(${rgb.join(', ')})`;
+    $('fHsl').textContent = `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)`;
+    $('svThumb').style.left = state.s * 100 + '%';
+    $('svThumb').style.top = (1 - state.v) * 100 + '%';
+    $('svThumb').style.background = '#' + hex;
+    $('hueThumb').style.left = `calc(13px + (100% - 26px) * ${state.h / 360})`;
+    $('hueThumb').style.background = `hsl(${state.h},100%,50%)`;
+    // 6桁の読み方
+    ['R', 'G', 'B'].forEach((c, i) => {
+      $('p' + c).textContent = hex2(rgb[i]);
+      $('p' + c + 'd').textContent = rgb[i];
+      const one = [0, 0, 0]; one[i] = rgb[i];
+      $('p' + c + 'b').style.background = `rgb(${one.join(',')})`;
+    });
+  }
+  const copyCurrent = () => { const hex = toHex(currentRgb()); copy(fmtHex(hex), hex); };
+
+  // ---- 全色マップ ----
+  const map = $('map'), gray = $('gray'), tip = $('tip'), sat = $('sat');
+  let mapSat = store.get('cc-sat', 100);
+  sat.value = mapSat; $('satVal').textContent = mapSat + '%';
+
+  function sizeCanvas(c) {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.max(1, Math.round(c.clientWidth * dpr)), h = Math.max(1, Math.round(c.clientHeight * dpr));
+    if (c.width !== w || c.height !== h) { c.width = w; c.height = h; }
+    return [w, h];
+  }
+  // 座標から色を計算する（ピクセルを読まないので番号が正確）
+  const mapColor = (fx, fy) => hslToRgb(clamp(fx, 0, 1) * 360 % 360, mapSat / 100, 1 - clamp(fy, 0, 1));
+  const grayColor = fx => { const g = Math.round((1 - clamp(fx, 0, 1)) * 255); return [g, g, g]; };
+
+  function drawMap() {
+    const [w, h] = sizeCanvas(map), ctx = map.getContext('2d'), img = ctx.createImageData(w, h), d = img.data;
+    const s = mapSat / 100;
+    for (let x = 0; x < w; x++) {
+      const hue = (x / (w - 1)) * 360;
+      for (let y = 0; y < h; y++) {
+        const l = 1 - y / (h - 1), a = s * Math.min(l, 1 - l);
+        const f = n => { const k = (n + hue / 30) % 12; return (l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1))) * 255; };
+        const i = (y * w + x) * 4;
+        d[i] = f(0); d[i + 1] = f(8); d[i + 2] = f(4); d[i + 3] = 255;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+  function drawGray() {
+    const [w, h] = sizeCanvas(gray), ctx = gray.getContext('2d'), g = ctx.createLinearGradient(0, 0, w, 0);
+    g.addColorStop(0, '#fff'); g.addColorStop(1, '#000');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  }
+
+  function hookMap(canvas, colorAt) {
+    const pos = e => { const r = canvas.getBoundingClientRect(); return [(e.clientX - r.left) / r.width, (e.clientY - r.top) / r.height]; };
+    canvas.addEventListener('pointermove', e => {
+      const [fx, fy] = pos(e), rgb = colorAt(fx, fy), box = $('mapBox').getBoundingClientRect();
+      tip.hidden = false;
+      tip.style.left = clamp(e.clientX - box.left, 50, box.width - 50) + 'px';
+      tip.style.top = (e.clientY - box.top) + 'px';
+      tip.querySelector('i').style.background = '#' + toHex(rgb);
+      tip.querySelector('span').textContent = fmtHex(toHex(rgb));
+    });
+    canvas.addEventListener('pointerleave', () => { tip.hidden = true; });
+    canvas.addEventListener('click', e => {
+      const [fx, fy] = pos(e), rgb = colorAt(fx, fy), hex = toHex(rgb);
+      copy(fmtHex(hex), hex);
+      setRgb(rgb);
+    });
+  }
+  hookMap(map, mapColor);
+  hookMap(gray, fx => grayColor(fx));
+
+  sat.addEventListener('input', () => { mapSat = +sat.value; $('satVal').textContent = mapSat + '%'; drawMap(); });
+  sat.addEventListener('change', () => store.set('cc-sat', mapSat));
+
+  // ---- 微調整 ----
+  const svCanvas = $('svCanvas');
+  function drawSV() {
+    const [w, h] = sizeCanvas(svCanvas), ctx = svCanvas.getContext('2d');
+    ctx.fillStyle = `hsl(${state.h},100%,50%)`; ctx.fillRect(0, 0, w, h);
+    const gw = ctx.createLinearGradient(0, 0, w, 0); gw.addColorStop(0, '#fff'); gw.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = gw; ctx.fillRect(0, 0, w, h);
+    const gb = ctx.createLinearGradient(0, 0, 0, h); gb.addColorStop(0, 'rgba(0,0,0,0)'); gb.addColorStop(1, '#000');
+    ctx.fillStyle = gb; ctx.fillRect(0, 0, w, h);
+  }
+  function drag(el, onMove) {
+    el.addEventListener('pointerdown', e => {
+      e.preventDefault(); el.setPointerCapture(e.pointerId);
+      const move = ev => { const r = el.getBoundingClientRect(); onMove(clamp((ev.clientX - r.left) / r.width, 0, 1), clamp((ev.clientY - r.top) / r.height, 0, 1)); };
+      move(e);
+      const up = () => {
+        el.removeEventListener('pointermove', move); el.removeEventListener('pointerup', up); el.removeEventListener('pointercancel', up);
+        if (optAuto.checked) copyCurrent();
+      };
+      el.addEventListener('pointermove', move); el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+    });
+  }
+  drag($('sv'), (fx, fy) => { state.s = fx; state.v = 1 - fy; render(); });
+  drag($('hue'), fx => { state.h = Math.min(fx * 360, 359.9); drawSV(); render(); });
+
+  // ---- 選んだ色 ----
+  $('big').onclick = copyCurrent;
+  document.querySelectorAll('.fmt').forEach(b => b.onclick = () => {
+    const hex = toHex(currentRgb());
+    copy(b.dataset.f === 'hex' ? fmtHex(hex) : b.querySelector('code').textContent, hex);
+  });
+  const hexIn = $('hexIn');
+  hexIn.addEventListener('input', () => {
+    const rgb = parseHex(hexIn.value);
+    hexIn.classList.toggle('bad', !!hexIn.value.trim() && !rgb);
+    if (rgb) setRgb(rgb);
+  });
+  hexIn.addEventListener('keydown', e => { if (e.key === 'Enter' && parseHex(hexIn.value)) copyCurrent(); });
+
+  if ('EyeDropper' in window) {
+    const eye = $('eye'); eye.hidden = false;
+    eye.onclick = async () => {
+      try { const r = await new EyeDropper().open(); const rgb = parseHex(r.sRGBHex); if (rgb) { setRgb(rgb); copyCurrent(); } }
+      catch (err) { if (err && err.name !== 'AbortError') showToast(toHex(currentRgb()), 'このブラウザではスポイトが使えません'); }
+    };
+  }
+
+  // ---- RGB→6桁変換 ----
+  const cIns = ['cR', 'cG', 'cB'].map($);
+  const convRgb = () => cIns.map(i => clamp(Math.round(+i.value || 0), 0, 255));
+  function renderConv() {
+    const hex = toHex(convRgb());
+    $('cSw').style.background = '#' + hex;
+    $('cHex').textContent = fmtHex(hex);
+  }
+  cIns.forEach(i => i.addEventListener('input', () => { renderConv(); setRgb(convRgb()); }));
+  $('cCopy').onclick = () => { const hex = toHex(convRgb()); copy(fmtHex(hex), hex); };
+
+  // ---- 履歴 ----
+  let hist = store.get('cc-history', []);
+  if (!Array.isArray(hist)) hist = [];
+  function addHistory(hex) {
+    hist = [hex, ...hist.filter(h => h !== hex)].slice(0, 30);
+    store.set('cc-history', hist); renderHist();
+  }
+  function renderHist() {
+    const box = $('hist'); box.textContent = '';
+    hist.forEach(hex => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.style.background = '#' + hex;
+      b.title = fmtHex(hex) + ' をコピー'; b.setAttribute('aria-label', b.title);
+      b.onclick = () => { copy(fmtHex(hex), hex); setRgb(parseHex(hex)); };
+      box.appendChild(b);
+    });
+    $('histEmpty').hidden = hist.length > 0;
+    $('clearHist').hidden = hist.length === 0;
+    renderConv();
+  }
+  $('clearHist').onclick = () => { hist = []; store.set('cc-history', hist); renderHist(); };
+
+  // ---- よく使う色の一覧 ----
+  document.querySelectorAll('.sw[data-hex]').forEach(b => b.onclick = () => {
+    const hex = b.dataset.hex; copy(fmtHex(hex), hex); setRgb(parseHex(hex));
+  });
+
+  // ---- 起動 ----
+  function drawAll() { drawMap(); drawGray(); drawSV(); }
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawAll, 120); });
+  drawAll(); render(); renderHist();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shutsumi.github.io/color-code/sitemap.xml
