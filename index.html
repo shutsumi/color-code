@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>カラーコード（色番号）をクリックでコピー｜全色マップ・RGB変換・色一覧</title>
+<title>色番コピペ｜カラーコード（色番号）を1クリックでコピー・日本の色238色</title>
 <meta name="description" content="#FF69B4 のような「#」と6桁の英数字のカラーコード（色番号）を、全色マップから1クリックでコピーできる無料ツール。RGBから6桁への変換、ピンクや青などよく使う色のカラーコード一覧、HTML・CSS・ブログでの色の指定方法もまとめています。">
 <meta name="google-site-verification" content="7oiEX2KoNH1N7GXP9yFKzsCg34b1Ome4T2qrHZKeGkU" />
 <link rel="canonical" href="https://shutsumi.github.io/color-code/">
@@ -11,14 +11,14 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="カラーコードをクリックでコピー">
-<meta property="og:title" content="カラーコード（色番号）をクリックでコピー｜全色マップ・RGB変換・色一覧">
+<meta property="og:site_name" content="色番コピペ">
+<meta property="og:title" content="色番コピペ｜カラーコード（色番号）を1クリックでコピー・日本の色238色">
 <meta property="og:description" content="全部の色を1枚に並べたマップから、#で始まる6桁の色番号を1クリックでコピー。登録不要・無料。">
 <meta property="og:url" content="https://shutsumi.github.io/color-code/">
 <meta property="og:image" content="https://shutsumi.github.io/color-code/ogp.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="カラーコードをクリックでコピー。全色マップと #FF4B1E の表示">
+<meta property="og:image:alt" content="色番コピペ。カラーコード（色番号）を1クリックでコピー">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "カラーコードをクリックでコピー",
+  "name": "色番コピペ",
+  "alternateName": "いろばんコピペ",
   "url": "https://shutsumi.github.io/color-code/",
   "description": "全色マップから#で始まる6桁のカラーコード（色番号）を1クリックでコピーできる無料ツール。RGBとHEXの変換、よく使う色のカラーコード一覧つき。",
   "applicationCategory": "DesignApplication",
@@ -84,7 +85,9 @@ body{
 a{color:inherit;text-underline-offset:3px}
 
 header{display:grid;gap:6px;border-bottom:1px dotted var(--sub);padding-bottom:16px}
-h1{font-size:clamp(20px,3.4vw,26px);font-weight:700;letter-spacing:.08em;margin:0;color:var(--strong);text-wrap:balance}
+h1{margin:0;color:var(--strong);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
+h1 .brand{font-size:clamp(26px,4.4vw,34px);font-weight:700;letter-spacing:.12em}
+h1 .h1sub{font-size:clamp(14px,2vw,17px);font-weight:700;letter-spacing:.04em;color:var(--ink)}
 header p{margin:0;font-size:14px}
 header p b{color:var(--accent);font-weight:700}
 nav ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px}
@@ -266,7 +269,7 @@ footer p{margin:0}
 <body>
 <div class="wrap">
   <header>
-    <h1>カラーコード（色番号）をクリックでコピー</h1>
+    <h1><span class="brand">色番コピペ</span><span class="h1sub">カラーコード（色番号）をクリックでコピー</span></h1>
     <p><b>#FF4B1E</b> のような「#」と6桁の英数字の色番号を、全色マップから選んでそのままコピーできます。登録不要・無料です。</p>
     <nav aria-label="ページ内の目次">
       <ul>

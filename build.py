@@ -150,7 +150,7 @@ def head(title, desc, url, prefix, theme='#ffffff', extra=''):
 <link rel="apple-touch-icon" href="{prefix}apple-touch-icon.png">
 <meta name="theme-color" content="{theme}">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="カラーコードをクリックでコピー">
+<meta property="og:site_name" content="色番コピペ">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{url}">
@@ -170,7 +170,7 @@ def foot(prefix):
     return f'''  <footer>
     {consult(prefix)}
     <p>色の名前・読み・カラーコードは、Wikipedia「<a href="https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E8%89%B2%E3%81%AE%E4%B8%80%E8%A6%A7" target="_blank" rel="noopener">日本の色の一覧</a>」に載っている近似値です。同じ名前の色でも、資料によってカラーコードが少しずつ違うことがあります。</p>
-    <p><a href="{prefix}">カラーコードをクリックでコピー</a>｜<a href="{prefix}wairo/">日本の色の一覧</a></p>
+    <p><a href="{prefix}">色番コピペ</a>｜<a href="{prefix}wairo/">日本の色の一覧</a></p>
   </footer>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"><i></i><span></span></div>
@@ -220,7 +220,7 @@ def color_page(idx, e):
     for t in (0.2, 0.4, 0.6):
         steps.append(('濃い', hexs([x * (1 - t) for x in c])))
 
-    title = f'{name}（{rd}）のカラーコード #{hx}｜色番号・RGB'
+    title = f'{name}（{rd}）のカラーコード #{hx}・RGB｜色番コピペ'
     desc = (f'{name}（{rd}）のカラーコード（色番号・カラーナンバー）は #{hx}、RGBは({c[0]}, {c[1]}, {c[2]})です。'
             f'{YURAI[name]}#付き・#なしの6桁やRGBをクリックでコピーできます。')
     alias_txt = f'<p>別の書き方：{esc(alias)}</p>' if alias else ''
@@ -230,7 +230,7 @@ def color_page(idx, e):
         same_txt = ('<p class="note">同じカラーコードで載っている色：' +
                     '、'.join(f'<a href="{P}wairo/{o["slug"]}/">{esc(o["name"])}</a>' for o in same) + '</p>')
 
-    body = f'''  <nav class="crumb" aria-label="パンくずリスト"><a href="{P}">カラーコードをクリックでコピー</a> › <a href="{P}wairo/">日本の色</a> › <span>{esc(name)}</span></nav>
+    body = f'''  <nav class="crumb" aria-label="パンくずリスト"><a href="{P}">色番コピペ</a> › <a href="{P}wairo/">日本の色</a> › <span>{esc(name)}</span></nav>
   <main class="stack">
     <header class="hero" style="background:#{hx};color:{ink}">
       <p class="yomi">{esc(rd)}</p>
@@ -287,14 +287,14 @@ background-color: #{hx}; /* 背景を{esc(name)}にする */</code></pre>
     <a class="cta" href="{P}">全色マップから、ほかのカラーコードを探す</a>
   </main>
 '''
-    ld = breadcrumb_ld([('カラーコードをクリックでコピー', SITE), ('日本の色', SITE + 'wairo/'), (name, url)])
+    ld = breadcrumb_ld([('色番コピペ', SITE), ('日本の色', SITE + 'wairo/'), (name, url)])
     return head(title, desc, url, P, '#' + hx, ld) + body + foot(P)
 
 # ---- 一覧ページ ----
 def index_page():
     P = '../'
     url = SITE + 'wairo/'
-    title = f'日本の色（和色）のカラーコード一覧 {len(COLORS)}色｜名前・読み方・色番号'
+    title = f'日本の色（和色）のカラーコード一覧 {len(COLORS)}色｜色番コピペ'
     desc = (f'東雲色・山吹色・藍色など、日本の伝統的な色の名前{len(COLORS)}色のカラーコード（色番号）と読み方の一覧。'
             'クリックで#つきの6桁をコピーできます。色名や読み方で検索もできます。')
     groups = []
@@ -308,7 +308,7 @@ def index_page():
             for e in items)
         groups.append(f'<section class="fam" id="{key}"><h2><i style="background:#{items[len(items) // 2]["hex"]}"></i>{label}系の色 <small>{len(items)}色</small></h2><ul class="cards">{cards}</ul></section>')
     famnav = ''.join(f'<a href="#{k}">{l}</a>' for k, l in FAMILIES)
-    body = f'''  <nav class="crumb" aria-label="パンくずリスト"><a href="{P}">カラーコードをクリックでコピー</a> › <span>日本の色</span></nav>
+    body = f'''  <nav class="crumb" aria-label="パンくずリスト"><a href="{P}">色番コピペ</a> › <span>日本の色</span></nav>
   <main class="stack">
     <header class="stack-s">
       <h1 class="plain">日本の色の名前とカラーコード一覧</h1>
@@ -323,7 +323,7 @@ def index_page():
     <a class="cta" href="{P}">全色マップから、ほかのカラーコードを探す</a>
   </main>
 '''
-    ld = breadcrumb_ld([('カラーコードをクリックでコピー', SITE), ('日本の色', url)])
+    ld = breadcrumb_ld([('色番コピペ', SITE), ('日本の色', url)])
     return head(title, desc, url, P, '#ffffff', ld) + body + foot(P)
 
 # ---- 書き出し ----
