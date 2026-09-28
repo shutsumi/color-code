@@ -348,7 +348,7 @@ def main():
     # トップページに和色データと相談ボタンを差し込む
     idx = ROOT / 'index.html'
     s = idx.read_text(encoding='utf-8')
-    data = [[e['name'], e['reading'], e['hex'], e['slug']] for e in COLORS]
+    data = [[e['name'], e['reading'], e['hex'], e['slug'], YURAI[e['name']]] for e in COLORS]
     s = re.sub(r'(<!--WAIRO-DATA-->).*?(<!--/WAIRO-DATA-->)',
                lambda m: m.group(1) + '<script>window.WAIRO=' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';</script>' + m.group(2), s, flags=re.S)
     s = re.sub(r'(<!--CONSULT-->).*?(<!--/CONSULT-->)', lambda m: m.group(1) + consult('') + m.group(2), s, flags=re.S)
