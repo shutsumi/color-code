@@ -20,6 +20,7 @@ TODAY = '2026-09-28'
 ROOT = Path(__file__).parent
 DATA = json.loads((ROOT / 'data/wairo.json').read_text(encoding='utf-8'))
 COLORS = DATA['colors']
+YURAI = json.loads((ROOT / 'data/yurai.json').read_text(encoding='utf-8'))  # 名前の由来（自前の文章）
 esc = html.escape
 
 # ---- ひらがな → ローマ字（URL用） ----
@@ -221,14 +222,13 @@ def color_page(idx, e):
 
     title = f'{name}（{rd}）のカラーコード #{hx}｜色番号・RGB'
     desc = (f'{name}（{rd}）のカラーコード（色番号・カラーナンバー）は #{hx}、RGBは({c[0]}, {c[1]}, {c[2]})です。'
-            f'#付き・#なしの6桁やRGBをクリックでコピーできます。似ている日本の色や、{name}の薄い色・濃い色のカラーコードも。')
+            f'{YURAI[name]}#付き・#なしの6桁やRGBをクリックでコピーできます。')
     alias_txt = f'<p>別の書き方：{esc(alias)}</p>' if alias else ''
     reads_txt = f'「{esc(other_reads)}」とも読みます。' if other_reads else ''
     same_txt = ''
     if same:
         same_txt = ('<p class="note">同じカラーコードで載っている色：' +
                     '、'.join(f'<a href="{P}wairo/{o["slug"]}/">{esc(o["name"])}</a>' for o in same) + '</p>')
-    wiki = f'https://ja.wikipedia.org/wiki/{e["wiki"]}'
 
     body = f'''  <nav class="crumb" aria-label="パンくずリスト"><a href="{P}">カラーコードをクリックでコピー</a> › <a href="{P}wairo/">日本の色</a> › <span>{esc(name)}</span></nav>
   <main class="stack">
@@ -236,6 +236,7 @@ def color_page(idx, e):
       <p class="yomi">{esc(rd)}</p>
       <h1>{esc(name)}のカラーコード</h1>
       <p class="hx">#{hx}</p>
+      <p class="yurai">{esc(YURAI[name])}</p>
     </header>
 
     <section class="stack-s">
@@ -275,11 +276,6 @@ background-color: #{hx}; /* 背景を{esc(name)}にする */</code></pre>
     <section class="stack-s">
       <h2>{esc(name)}に似ている日本の色</h2>
       <div class="minis">{''.join(mini(o, P) for o in near)}</div>
-    </section>
-
-    <section class="stack-s">
-      <h2>{esc(name)}の名前の由来</h2>
-      <p>{esc(name)}という名前の由来や歴史は、Wikipediaの「<a href="{esc(wiki)}" target="_blank" rel="noopener">{esc(e["wiki"].split("#")[0])}</a>」で読めます。</p>
     </section>
 
     <nav class="pager" aria-label="前後の色">
