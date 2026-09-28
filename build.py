@@ -14,7 +14,7 @@ from pathlib import Path
 
 # ---- 設定 ----
 SITE = 'https://shutsumi.github.io/color-code/'
-FORM_URL = ''  # 相談用GoogleフォームのURL。空のあいだは相談ボタンを出さない
+FORM_URL = 'https://forms.gle/2tCoAUquzagNF3BW6'  # 相談用GoogleフォームのURL。空のあいだは相談ボタンを出さない
 TODAY = '2026-09-28'
 
 ROOT = Path(__file__).parent
@@ -133,8 +133,8 @@ def consult(prefix):
     if not FORM_URL:
         return ''
     return f'''<section class="consult">
-      <p>ツールへのご要望や、お仕事のご相談はこちらから</p>
-      <a class="consult-btn" href="{esc(FORM_URL)}" target="_blank" rel="noopener">このツールの製作者に相談する</a>
+      <p>機能改善のリクエストや、製作者へのご相談はこちらから</p>
+      <a class="consult-btn" href="{esc(FORM_URL)}" target="_blank" rel="noopener">リクエスト・相談フォームを開く</a>
     </section>'''
 
 def head(title, desc, url, prefix, theme='#ffffff', extra=''):
