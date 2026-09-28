@@ -106,6 +106,10 @@ h2 small{font-weight:400;letter-spacing:0;color:var(--sub);font-size:12px}
   box-shadow:0 2px 8px var(--shadow)
 }
 .tip i{width:14px;height:14px;border-radius:2px;display:block;border:1px solid rgba(0,0,0,.12)}
+.maphead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin-bottom:10px}
+.maphead h2{margin:0}
+.pick{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;color:var(--strong);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 10px;cursor:pointer;white-space:nowrap}
+.pick:hover{border-color:var(--strong)}
 .satrow{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap;color:var(--sub);font-size:12px}
 .satrow input{flex:1;min-width:160px;accent-color:var(--accent)}
 .satrow .num{width:3.2em;text-align:right;color:var(--ink)}
@@ -279,7 +283,10 @@ footer p{margin:0}
 
   <main class="wrap" style="gap:36px">
     <section id="tool" aria-label="カラーコードを選んでコピーする">
-      <h2>全色マップ <small>横が色相、縦が明るさ。クリックすると色番号がコピーされます</small></h2>
+      <div class="maphead">
+        <h2>全色マップ <small>横が色相、縦が明るさ。クリックすると色番号がコピーされます</small></h2>
+        <button class="pick" id="eye" type="button" title="画面のどこからでも色を選んでコピー"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 5.5 4 4"/><path d="M19.8 4.2a2.6 2.6 0 0 0-3.7 0l-2.3 2.3-1.1-1.1-1.4 1.4 6 6 1.4-1.4-1.1-1.1 2.3-2.3a2.6 2.6 0 0 0 0-3.7z" fill="currentColor" stroke="none"/><path d="M12.4 8.2 5 15.6V19h3.4l7.4-7.4"/></svg><span>カラーを選択</span></button>
+      </div>
       <div class="map-box" id="mapBox">
         <canvas id="map" aria-label="全色マップ。クリックでカラーコードをコピー"></canvas>
         <canvas id="gray" aria-label="白から黒のグレー。クリックでカラーコードをコピー"></canvas>
@@ -318,7 +325,6 @@ footer p{margin:0}
         </div>
         <div class="inrow">
           <input id="hexIn" class="field" type="text" autocomplete="off" spellcheck="false" placeholder="カラーコードを入れて表示（例 ff69b4）" aria-label="カラーコードを入力">
-          <button class="btn" id="eye" type="button" hidden>スポイト</button>
         </div>
         <p class="near" id="near" aria-live="polite"></p>
       </section>
@@ -333,13 +339,13 @@ footer p{margin:0}
     <section id="wairo" class="wairo">
       <h2>日本の色の名前 <small>東雲色・山吹色・藍色など238色。マスをクリックするとコピーできます</small></h2>
       <div class="wcard" id="wcard">
-        <a class="wsw" id="wSw" href="wairo/shinonomeiro/" style="background:#F19072" aria-label="東雲色の詳細を見る"></a>
+        <a class="wsw" id="wSw" href="wairo/shinonomeiro/" target="_blank" rel="noopener" style="background:#F19072" aria-label="東雲色の詳細を見る"></a>
         <div class="wtext">
           <p class="wmsg" id="wMsg">名前のついた日本の色</p>
-          <p class="wname"><a id="wName" href="wairo/shinonomeiro/">東雲色</a><span id="wYomi">しののめいろ</span></p>
+          <p class="wname"><a id="wName" href="wairo/shinonomeiro/" target="_blank" rel="noopener">東雲色</a><span id="wYomi">しののめいろ</span></p>
           <p class="whex" id="wHex">#F19072</p>
           <p class="wyurai" id="wYurai"></p>
-          <a class="wmore" id="wMore" href="wairo/shinonomeiro/">東雲色の詳細を見る<span aria-hidden="true"> →</span></a>
+          <a class="wmore" id="wMore" href="wairo/shinonomeiro/" target="_blank" rel="noopener">東雲色の詳細を見る<span aria-hidden="true"> →</span></a>
         </div>
         <div class="wbtns">
           <button class="btn" id="wCopy" type="button">コピー</button>
@@ -757,13 +763,15 @@ footer p{margin:0}
   });
   hexIn.addEventListener('keydown', e => { if (e.key === 'Enter' && parseHex(hexIn.value)) copyCurrent(); });
 
-  if ('EyeDropper' in window) {
-    const eye = $('eye'); eye.hidden = false;
-    eye.onclick = async () => {
-      try { const r = await new EyeDropper().open(); const rgb = parseHex(r.sRGBHex); if (rgb) { setRgb(rgb); copyCurrent(); } }
-      catch (err) { if (err && err.name !== 'AbortError') showToast(toHex(currentRgb()), 'このブラウザではスポイトが使えません'); }
-    };
-  }
+  // カラーを選択（スポイト）：画面上の好きな場所の色を拾ってコピー。Chrome・Edgeが対応
+  $('eye').onclick = async () => {
+    if (!('EyeDropper' in window)) {
+      showToast(toHex(currentRgb()), '「カラーを選択」はChrome・Edgeで使えます。このブラウザは未対応です');
+      return;
+    }
+    try { const r = await new EyeDropper().open(); const rgb = parseHex(r.sRGBHex); if (rgb) { setRgb(rgb); copyCurrent(); } }
+    catch (err) { if (err && err.name !== 'AbortError') showToast(toHex(currentRgb()), '色を選べませんでした。もう一度お試しください'); }
+  };
 
   // ---- RGB→6桁変換 ----
   const cIns = ['cR', 'cG', 'cB'].map($);
@@ -832,7 +840,7 @@ footer p{margin:0}
     el.textContent = '';
     el.append(n.d < 2.3 ? '日本の色の名前：' : 'いちばん近い日本の色：');
     const a = document.createElement('a');
-    a.href = 'wairo/' + n.c.slug + '/'; a.textContent = n.c.name;
+    a.href = 'wairo/' + n.c.slug + '/'; a.target = '_blank'; a.rel = 'noopener'; a.textContent = n.c.name;
     el.append(a, `（${n.c.yomi}　#${n.c.hex}）`);
   }
 
