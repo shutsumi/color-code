@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700;800&display=swap">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,280 +61,292 @@
 </script>
 <style>
 :root{
-  --bg:#ffffff; --panel:#f5f5f4; --line:#e6e6e6; --ink:#545454; --strong:#3a3a3a; --sub:#8a8a8a; --accent:#ff4b1e;
-  --shadow:rgba(0,0,0,.18);
+  --bg:#ffffff; --panel:#f4f4f4; --line:#e1e1e1; --line2:#c9c9c9; --ink:#2c2c2c; --strong:#111111; --sub:#6e6e6e;
+  --focus:#1473e6; --shadow:rgba(0,0,0,.16);
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#1d1c1b; --panel:#272625; --line:#3a3837; --ink:#dddad6; --strong:#f2f0ed; --sub:#8e8b87; --shadow:rgba(0,0,0,.5);
+    --bg:#1b1b1b; --panel:#262626; --line:#353535; --line2:#4a4a4a; --ink:#e6e6e6; --strong:#ffffff; --sub:#a3a3a3;
+    --focus:#5aa9ff; --shadow:rgba(0,0,0,.5);
     color-scheme:dark;
   }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+[id]{scroll-margin-top:72px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;
-  font-size:15px;line-height:1.8;
-  padding-inline:16px;padding-block:28px 64px;
+  font-family:"Source Sans 3","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Meiryo",sans-serif;
+  font-size:15px;line-height:1.75;padding-block:0 64px;
 }
-.wrap{max-width:1040px;margin:0 auto;display:grid;gap:36px}
-.num,.hex,code,kbd{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-variant-numeric:tabular-nums}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:24px;display:grid;gap:56px}
+@media (max-width:600px){.wrap{padding-inline:16px;gap:44px}}
+.num,.hex,code,kbd{font-family:"Source Sans 3","Helvetica Neue",Arial,sans-serif;font-variant-numeric:tabular-nums}
 a{color:inherit;text-underline-offset:3px}
+button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+svg.i{width:18px;height:18px;flex:none}
 
-header{display:grid;gap:6px;border-bottom:1px dotted var(--sub);padding-bottom:16px}
-h1{margin:0;color:var(--strong);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
-h1 .brand{font-size:clamp(26px,4.4vw,34px);font-weight:700;letter-spacing:.12em}
-h1 .h1sub{font-size:clamp(14px,2vw,17px);font-weight:700;letter-spacing:.04em;color:var(--ink)}
-header p{margin:0;font-size:14px}
-header p b{color:var(--accent);font-weight:700}
-nav ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:13px}
-nav a{color:var(--sub)}
-nav a:hover{color:var(--ink)}
+/* 上部バー */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.tb-in{max-width:1240px;margin:0 auto;padding-inline:24px;height:56px;display:flex;align-items:center;gap:8px}
+@media (max-width:600px){.tb-in{padding-inline:16px}}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--strong);font-weight:800;font-size:17px;letter-spacing:.04em;padding-right:18px;margin-right:4px;border-right:1px solid var(--line);height:100%;white-space:nowrap}
+.logo img{width:26px;height:26px;border-radius:6px}
+.tb-nav{display:flex;height:100%;overflow-x:auto;scrollbar-width:none}
+.tb-nav::-webkit-scrollbar{display:none}
+.tb-nav a{display:flex;align-items:center;padding-inline:14px;font-size:14px;color:var(--ink);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent}
+.tb-nav a:hover{border-bottom-color:var(--strong);color:var(--strong)}
+@media (max-width:600px){.logo span{display:none}.logo{padding-right:10px}.tb-nav a{padding-inline:10px;font-size:13px}}
 
-h2{font-size:14px;font-weight:700;letter-spacing:.1em;margin:0 0 10px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;color:var(--strong)}
-h2 small{font-weight:400;letter-spacing:0;color:var(--sub);font-size:12px}
+/* ファーストビュー */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:40px;align-items:start;padding-top:32px}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:28px;padding-top:24px}}
+.hero-l{display:grid;gap:18px;min-width:0}
+h1{margin:0;color:var(--strong);font-size:clamp(28px,3.6vw,40px);font-weight:800;line-height:1.3;letter-spacing:.01em;text-wrap:balance}
+.hero-lead{margin:0;font-size:15px;max-width:40em}
+.hero-lead b{font-weight:800;color:var(--strong)}
 
-/* 全色マップ */
-.map-box{position:relative}
-#map,#gray{display:block;width:100%;cursor:crosshair;border-radius:4px;touch-action:none}
-#map{height:clamp(240px,42vw,420px)}
-#gray{height:36px;margin-top:8px}
-.tip{
-  position:absolute;pointer-events:none;transform:translate(-50%,calc(-100% - 14px));
-  background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:4px;
-  padding:4px 8px 4px 6px;font-size:13px;display:flex;align-items:center;gap:6px;white-space:nowrap;
-  box-shadow:0 2px 8px var(--shadow)
-}
-.tip i{width:14px;height:14px;border-radius:2px;display:block;border:1px solid rgba(0,0,0,.12)}
-.maphead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin-bottom:10px}
-.maphead h2{margin:0}
-.pick{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;color:var(--strong);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 10px;cursor:pointer;white-space:nowrap}
+.tabs{position:relative;display:flex;align-items:center;gap:4px 22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:14px;color:var(--sub);background:none;border:0;border-bottom:2px solid transparent;padding:10px 2px;margin-bottom:-1px;cursor:pointer}
+.tab:hover{color:var(--strong)}
+.tab[aria-selected="true"]{color:var(--strong);border-bottom-color:var(--strong);font-weight:700}
+.tabs .spacer{flex:1}
+.pick{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;color:var(--strong);background:var(--bg);border:1px solid var(--line2);border-radius:999px;padding:6px 14px 6px 11px;margin-block:6px;cursor:pointer;white-space:nowrap}
 .pick:hover{border-color:var(--strong)}
 /* Safariなど用：OSのカラーパネル（スポイトつき）を開くための入力欄。見えないがボタンの位置に置く */
 .eye-alt{position:absolute;right:0;top:0;width:40px;height:32px;opacity:0;pointer-events:none;border:0;padding:0}
-.satrow{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap;color:var(--sub);font-size:12px}
-.satrow input{flex:1;min-width:160px;accent-color:var(--accent)}
+.panel{display:grid;gap:14px}
+.cap{margin:0;font-size:13px;color:var(--sub)}
+
+/* 全色マップ */
+.map-box{position:relative}
+#map,#gray{display:block;width:100%;cursor:crosshair;border-radius:8px;touch-action:none}
+#map{height:clamp(260px,40vw,440px)}
+#gray{height:34px;margin-top:8px}
+.tip{
+  position:absolute;pointer-events:none;transform:translate(-50%,calc(-100% - 14px));
+  background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;
+  padding:4px 9px 4px 6px;font-size:13px;display:flex;align-items:center;gap:6px;white-space:nowrap;
+  box-shadow:0 4px 14px var(--shadow)
+}
+.tip i{width:14px;height:14px;border-radius:3px;display:block;border:1px solid rgba(0,0,0,.12)}
+.tip small{color:var(--sub);font-size:11px}
+.tip small:empty{display:none}
+.satrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:var(--sub);font-size:13px}
+.satrow input{flex:1;min-width:160px;accent-color:var(--strong)}
 .satrow .num{width:3.2em;text-align:right;color:var(--ink)}
 
-.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
-@media (max-width:760px){.row{grid-template-columns:1fr}}
-
-.picker{display:grid;gap:14px;align-content:start}
-.sv{position:relative;aspect-ratio:3/2;max-width:100%;border-radius:10px;overflow:hidden;touch-action:none;cursor:crosshair}
+/* 微調整 */
+.sv{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:8px;overflow:hidden;touch-action:none;cursor:crosshair}
 .sv canvas{width:100%;height:100%;display:block}
-.bar{position:relative;height:26px;border-radius:13px;touch-action:none;cursor:pointer;
+.bar{position:relative;height:24px;border-radius:12px;touch-action:none;cursor:pointer;
   background:linear-gradient(90deg,#f00,#ff0 16.66%,#0f0 33.33%,#0ff 50%,#00f 66.66%,#f0f 83.33%,#f00)}
 .thumb{position:absolute;width:22px;height:22px;border-radius:50%;border:3px solid #fff;
   box-shadow:0 0 0 1px rgba(0,0,0,.25),0 1px 4px rgba(0,0,0,.3);transform:translate(-50%,-50%);pointer-events:none}
 .bar .thumb{top:50%;width:26px;height:26px}
 .opts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px}
-.opts label{display:flex;align-items:center;gap:6px;cursor:pointer}
-.opts input{accent-color:var(--accent);width:16px;height:16px}
+.opts label,.pal-head label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.opts input,.pal-head input{accent-color:var(--strong);width:16px;height:16px;margin:0}
 
-.current{display:grid;gap:14px;align-content:start}
-.big{
-  display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
-  height:150px;border-radius:10px;border:1px solid var(--line);padding:14px 16px;cursor:pointer;
-  font:inherit;text-align:left;width:100%
-}
-.big .hex{font-size:34px;font-weight:700;letter-spacing:.06em;line-height:1}
-.big span:last-child{font-size:12px;opacity:.85}
-.big:focus-visible,button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.fmts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.fmt{
-  background:var(--panel);border:1px solid transparent;border-radius:6px;padding:8px 10px;cursor:pointer;
-  color:var(--ink);font:inherit;text-align:left;display:grid;min-width:0
-}
-.fmt:hover{border-color:var(--line)}
-.fmt b{font-size:10px;letter-spacing:.14em;color:var(--sub);font-weight:700;line-height:1.6}
+/* 右側のパレット */
+.hero-r{display:grid;gap:10px;position:sticky;top:72px}
+@media (max-width:900px){.hero-r{position:static}}
+.pal-head{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--sub)}
+.pal-head b{color:var(--strong);font-size:14px}
+.band{border-radius:10px;overflow:hidden;display:grid;border:1px solid rgba(0,0,0,.06)}
+.big{display:grid;justify-items:start;gap:4px;background:none;border:0;color:inherit;font:inherit;text-align:left;padding:22px 20px 14px;cursor:pointer;min-height:150px;align-content:end}
+.big .hex{font-size:44px;font-weight:800;letter-spacing:.03em;line-height:1}
+.big .hint{font-size:12px;opacity:.8;display:inline-flex;align-items:center;gap:5px}
+.fmts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:0 12px 12px}
+.fmt{background:color-mix(in srgb,currentColor 12%,transparent);border:0;border-radius:6px;padding:7px 10px;cursor:pointer;color:inherit;font:inherit;text-align:left;display:grid;min-width:0}
+.fmt:hover{background:color-mix(in srgb,currentColor 22%,transparent)}
+.fmt b{font-size:10px;letter-spacing:.12em;font-weight:700;opacity:.75;line-height:1.5}
 .fmt code{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.inrow{display:flex;gap:8px;flex-wrap:wrap}
+.tints{display:grid;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+.tints button{display:flex;align-items:center;justify-content:flex-start;gap:12px;height:52px;padding:0 16px;border:0;cursor:pointer;font:inherit;font-size:14px;font-weight:700;letter-spacing:.03em}
+.tints button span{font-size:11px;font-weight:400;opacity:.8;letter-spacing:0}
+.tints button svg{opacity:0;transition:opacity .12s;margin-left:auto}
+.tints button:hover svg,.tints button:focus-visible svg{opacity:.9}
 .field{
-  flex:1;min-width:0;font:inherit;font-family:Lato,sans-serif;font-size:16px;letter-spacing:.04em;
-  padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)
+  width:100%;min-width:0;font:inherit;font-size:16px;letter-spacing:.02em;
+  padding:9px 12px;border:1px solid var(--line2);border-radius:8px;background:var(--bg);color:var(--ink)
 }
-.field.bad{border-color:var(--accent)}
-.btn{font:inherit;font-size:13px;padding:8px 12px;border-radius:6px;border:1px solid var(--line);
-  background:var(--bg);color:var(--ink);cursor:pointer;white-space:nowrap}
-.btn:hover{border-color:var(--sub)}
-
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{width:36px;height:36px;border-radius:6px;border:1px solid rgba(0,0,0,.1);cursor:pointer;padding:0}
-.chip:hover{transform:translateY(-1px);box-shadow:0 2px 6px var(--shadow)}
-.empty{color:var(--sub);font-size:12px;margin:0}
-.linkbtn{background:none;border:0;color:var(--sub);font:inherit;font-size:12px;cursor:pointer;text-decoration:underline;padding:0}
-
-/* 読みもの */
-.article{display:grid;gap:44px;border-top:1px dotted var(--sub);padding-top:36px}
-.article section{display:grid;gap:12px;max-width:760px}
-.article section.wide{max-width:none}
-.article h2{font-size:clamp(18px,2.6vw,21px);letter-spacing:.06em;margin:0}
-.article h3{font-size:15px;margin:10px 0 0;color:var(--strong)}
-.article p{margin:0}
-.lead{color:var(--sub);font-size:13px}
-.note{font-size:13px;color:var(--sub)}
-code.inline{background:var(--panel);padding:1px 6px;border-radius:4px;font-size:.92em}
-pre{background:var(--panel);border-radius:6px;padding:12px 14px;margin:0;overflow-x:auto;font-size:13px;line-height:1.7}
-pre code{font-family:Menlo,Consolas,monospace}
-
-.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:520px}
-.part{border:1px solid var(--line);border-radius:6px;padding:10px 12px;display:grid;gap:2px}
-.part b{font-family:Lato,sans-serif;font-size:24px;letter-spacing:.06em;color:var(--strong);line-height:1.2}
-.part span{font-size:12px;color:var(--sub)}
-.part i{display:block;height:4px;border-radius:2px;margin-top:4px}
-
-.conv{display:flex;flex-wrap:wrap;align-items:end;gap:10px;background:var(--panel);border-radius:8px;padding:14px}
-.conv label{display:grid;gap:2px;font-size:12px;color:var(--sub)}
-.conv input{width:5.5em}
-.conv .out{display:flex;align-items:center;gap:10px;margin-left:auto}
-.conv .out i{width:40px;height:40px;border-radius:6px;border:1px solid rgba(0,0,0,.1)}
-.conv .out b{font-family:Lato,sans-serif;font-size:22px;letter-spacing:.06em;color:var(--strong);min-width:5.6em}
-@media (max-width:520px){.conv .out{margin-left:0;width:100%}}
-
-.groups{display:grid;gap:26px}
-.group h3{margin:0 0 8px;display:flex;align-items:center;gap:8px}
-.group h3 i{width:10px;height:10px;border-radius:50%}
-.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
-.sw{
-  display:flex;align-items:center;gap:10px;background:none;border:1px solid var(--line);border-radius:6px;
-  padding:7px 9px;cursor:pointer;color:var(--ink);font:inherit;font-size:13px;text-align:left;min-width:0
-}
-.sw:hover{border-color:var(--sub)}
-.sw i{width:30px;height:30px;border-radius:4px;flex:none;border:1px solid rgba(0,0,0,.1)}
-.sw span{display:grid;line-height:1.35;min-width:0}
-.sw code{font-size:12px;color:var(--sub)}
-.sw small{font-size:10px;color:var(--sub)}
-
-.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.howto div{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:6px;align-content:start}
-.howto h3{margin:0}
-.howto p{font-size:14px}
-
-details{border-bottom:1px solid var(--line);padding-block:10px}
-summary{cursor:pointer;font-weight:700;color:var(--strong)}
-details p{margin-top:8px}
-
-footer{border-top:1px dotted var(--sub);padding-top:16px;font-size:12px;color:var(--sub);display:grid;gap:4px}
-footer p{margin:0}
-.consult{display:grid;justify-items:center;gap:8px;text-align:center;padding:24px 16px;margin-bottom:14px;background:var(--panel);border-radius:10px}
-.consult p{font-size:13px;color:var(--ink)}
-.consult-btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:12px 22px;border-radius:999px;letter-spacing:.04em}
-.consult-btn:hover{filter:brightness(.95)}
-
-/* 近い日本の色・日本の色の名前 */
+.field.bad{border-color:#d7373f}
 .near{margin:0;font-size:13px;color:var(--sub);min-height:1.8em}
 .near a{color:var(--strong);font-weight:700}
-.tip small{color:var(--sub);font-size:11px}
-.tip small:empty{display:none}
-.wairo{display:grid;gap:12px}
+
+/* 共通の見出し・ボタン */
+h2{font-size:22px;font-weight:800;margin:0 0 14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;color:var(--strong);letter-spacing:.01em}
+h2 small{font-weight:400;color:var(--sub);font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:14px;font-weight:700;padding:8px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--bg);color:var(--strong);cursor:pointer;white-space:nowrap;text-decoration:none}
+.btn:hover{border-color:var(--strong)}
+.btn.solid{background:var(--strong);border-color:var(--strong);color:var(--bg)}
+.btn.solid:hover{opacity:.88}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{width:40px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,.08);cursor:pointer;padding:0}
+.chip:hover{transform:translateY(-2px);box-shadow:0 4px 10px var(--shadow)}
+.empty{color:var(--sub);font-size:13px;margin:0}
+.linkbtn{background:none;border:0;color:var(--sub);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline;padding:0}
+
+/* 日本の色の名前 */
+.wairo{display:grid;gap:14px}
 .wairo h2{margin:0}
-.wcard{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;padding:12px}
-.wsw{width:112px;align-self:stretch;min-height:112px;border-radius:8px;flex:none;border:1px solid rgba(0,0,0,.08);transition:background .12s,transform .12s}
-.wsw:hover{transform:scale(1.03)}
-.wyurai{font-size:13px;line-height:1.7;margin-top:6px!important;max-width:40em}
-.wyurai:empty{display:none}
-.wmore{justify-self:start;margin-top:8px;font-size:13px;font-weight:700;color:var(--strong);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 14px}
-.wmore:hover{border-color:var(--strong)}
-.wtext{flex:1;min-width:160px;display:grid}
+.wcard{display:grid;grid-template-columns:minmax(140px,220px) minmax(0,1fr) auto;gap:20px;align-items:stretch;border:1px solid var(--line);border-radius:12px;padding:14px}
+@media (max-width:700px){.wcard{grid-template-columns:110px minmax(0,1fr)}.wbtns{grid-column:1/-1}}
+.wsw{border-radius:8px;min-height:140px;border:1px solid rgba(0,0,0,.06);transition:background .12s,transform .12s}
+.wsw:hover{transform:scale(1.02)}
+.wtext{display:grid;align-content:center;min-width:0}
 .wtext p{margin:0}
 .wmsg{font-size:12px;color:var(--sub)}
 .wname{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.wname a{font-size:24px;font-weight:700;letter-spacing:.1em;color:var(--strong);text-decoration:none}
+.wname a{font-size:28px;font-weight:800;letter-spacing:.06em;color:var(--strong);text-decoration:none}
 .wname a:hover{text-decoration:underline}
 .wname span{font-size:13px;color:var(--sub);letter-spacing:.1em}
-.whex{font-family:Lato,sans-serif;font-size:16px;letter-spacing:.06em}
-.wbtns{display:flex;gap:8px;flex-wrap:wrap}
-.btn.omi{border-color:var(--accent);color:var(--accent);font-weight:700}
-.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(24px,1fr));gap:3px}
-.wgrid button{aspect-ratio:1;border:0;border-radius:3px;cursor:pointer;padding:0;min-width:0}
+.whex{font-size:17px;font-weight:700;letter-spacing:.04em}
+.wyurai{font-size:13px;line-height:1.7;margin-top:6px!important;max-width:40em}
+.wyurai:empty{display:none}
+.wmore{justify-self:start;margin-top:10px}
+.wbtns{display:flex;flex-direction:column;gap:8px;justify-content:center}
+@media (max-width:700px){.wbtns{flex-direction:row}}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(26px,1fr));gap:3px}
+.wgrid button{aspect-ratio:1;border:0;border-radius:4px;cursor:pointer;padding:0;min-width:0}
 .wgrid button:hover,.wgrid button.on{outline:2px solid var(--strong);outline-offset:1px;z-index:1}
-.wgrid button.dim{opacity:.12}
+.wgrid button.dim{opacity:.1}
 .wcard.flash .wsw{animation:pop .5s ease}
-@keyframes pop{0%{transform:scale(.85)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.wcard.flash .wsw{animation:none}.wsw{transition:none}.wsw:hover{transform:none}}
+@keyframes pop{0%{transform:scale(.88)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.wcard.flash .wsw{animation:none}.wsw,.tints button svg{transition:none}.wsw:hover{transform:none}}
+
+/* 読みもの */
+.article{display:grid;gap:56px;border-top:1px solid var(--line);padding-top:48px}
+.article section{display:grid;gap:12px;max-width:780px}
+.article section.wide{max-width:none}
+.article h2{font-size:clamp(22px,2.6vw,28px);margin:0}
+.article h3{font-size:16px;font-weight:800;margin:10px 0 0;color:var(--strong)}
+.article p{margin:0}
+.lead{color:var(--sub);font-size:14px}
+.note{font-size:13px;color:var(--sub)}
+code.inline{background:var(--panel);padding:1px 6px;border-radius:4px;font-size:.92em}
+pre{background:var(--panel);border-radius:8px;padding:14px 16px;margin:0;overflow-x:auto;font-size:13px;line-height:1.7}
+pre code{font-family:Menlo,Consolas,monospace}
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:540px}
+.part{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:2px}
+.part b{font-size:28px;font-weight:800;letter-spacing:.04em;color:var(--strong);line-height:1.2}
+.part span{font-size:12px;color:var(--sub)}
+.part i{display:block;height:4px;border-radius:2px;margin-top:4px}
+.conv{display:flex;flex-wrap:wrap;align-items:end;gap:10px;background:var(--panel);border-radius:10px;padding:16px}
+.conv label{display:grid;gap:2px;font-size:12px;color:var(--sub)}
+.conv input{width:5.5em}
+.conv .out{display:flex;align-items:center;gap:10px;margin-left:auto}
+.conv .out i{width:44px;height:44px;border-radius:8px;border:1px solid rgba(0,0,0,.08)}
+.conv .out b{font-size:24px;font-weight:800;letter-spacing:.04em;color:var(--strong);min-width:5.4em}
+@media (max-width:520px){.conv .out{margin-left:0;width:100%}}
+.groups{display:grid;gap:28px}
+.group h3{margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.group h3 i{width:10px;height:10px;border-radius:50%}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.sw{display:flex;align-items:center;gap:10px;background:none;border:1px solid var(--line);border-radius:8px;padding:7px 9px;cursor:pointer;color:var(--ink);font:inherit;font-size:13px;text-align:left;min-width:0}
+.sw:hover{border-color:var(--strong)}
+.sw i{width:32px;height:32px;border-radius:6px;flex:none;border:1px solid rgba(0,0,0,.08)}
+.sw span{display:grid;line-height:1.35;min-width:0}
+.sw code{font-size:12px;color:var(--sub)}
+.sw small{font-size:10px;color:var(--sub)}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.howto div{border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:6px;align-content:start}
+.howto h3{margin:0}
+.howto p{font-size:14px}
+details{border-bottom:1px solid var(--line);padding-block:12px}
+summary{cursor:pointer;font-weight:700;color:var(--strong)}
+details p{margin-top:8px}
+
+footer{border-top:1px solid var(--line);padding-top:20px;font-size:12px;color:var(--sub);display:grid;gap:4px}
+footer p{margin:0}
+.consult{display:grid;justify-items:center;gap:10px;text-align:center;padding:28px 16px;margin-bottom:16px;background:var(--panel);border-radius:12px}
+.consult p{font-size:14px;color:var(--ink)}
+.consult-btn{display:inline-block;background:var(--strong);color:var(--bg);text-decoration:none;font-weight:700;font-size:15px;padding:12px 26px;border-radius:999px}
+.consult-btn:hover{opacity:.88}
 
 .toast{
   position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);
-  background:var(--strong);color:var(--bg);border-radius:6px;padding:10px 16px 10px 12px;
+  background:var(--strong);color:var(--bg);border-radius:8px;padding:10px 16px 10px 12px;
   display:flex;align-items:center;gap:10px;font-size:14px;opacity:0;pointer-events:none;
-  transition:opacity .18s,transform .18s;z-index:10;max-width:calc(100% - 32px)
+  transition:opacity .18s,transform .18s;z-index:30;max-width:calc(100% - 32px)
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.toast i{width:18px;height:18px;border-radius:3px;border:1px solid rgba(255,255,255,.4);flex:none}
+.toast i{width:18px;height:18px;border-radius:4px;border:1px solid rgba(255,255,255,.4);flex:none}
 @media (prefers-reduced-motion:reduce){.toast{transition:none}.chip:hover{transform:none}}
 [hidden]{display:none!important}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1><span class="brand">色番コピペ</span><span class="h1sub">カラーコード（色番号）をクリックでコピー</span></h1>
-    <p><b>#FF4B1E</b> のような「#」と6桁の英数字の色番号を、全色マップから選んでそのままコピーできます。登録不要・無料です。</p>
-    <nav aria-label="ページ内の目次">
-      <ul>
-        <li><a href="#about">カラーコードとは</a></li>
-        <li><a href="#read">6桁の読み方</a></li>
-        <li><a href="#convert">RGB→6桁変換</a></li>
-        <li><a href="#wairo">日本の色の名前</a></li>
-        <li><a href="#list">よく使う色の一覧</a></li>
-        <li><a href="#howto">HTML・ブログでの指定方法</a></li>
-        <li><a href="#faq">よくある質問</a></li>
-      </ul>
+<header class="topbar">
+  <div class="tb-in">
+    <a class="logo" href="./" aria-label="色番コピペ トップ"><img src="favicon.svg" alt="" width="26" height="26"><span>色番コピペ</span></a>
+    <nav class="tb-nav" aria-label="ページ内の目次">
+      <a href="#tool">全色マップ</a>
+      <a href="#wairo">日本の色</a>
+      <a href="#convert">RGB変換</a>
+      <a href="#list">色の一覧</a>
+      <a href="#howto">使い方</a>
+      <a href="#faq">よくある質問</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main class="wrap" style="gap:36px">
-    <section id="tool" aria-label="カラーコードを選んでコピーする">
-      <div class="maphead" style="position:relative">
-        <h2>全色マップ <small>横が色相、縦が明るさ。クリックすると色番号がコピーされます</small></h2>
-        <button class="pick" id="eye" type="button" title="画面の好きな場所の色を選んでコピー"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 5.5 4 4"/><path d="M19.8 4.2a2.6 2.6 0 0 0-3.7 0l-2.3 2.3-1.1-1.1-1.4 1.4 6 6 1.4-1.4-1.1-1.1 2.3-2.3a2.6 2.6 0 0 0 0-3.7z" fill="currentColor" stroke="none"/><path d="M12.4 8.2 5 15.6V19h3.4l7.4-7.4"/></svg><span>カラーを選択</span></button>
-        <input type="color" id="eyeAlt" class="eye-alt" value="#ff4b1e" tabindex="-1" aria-hidden="true">
-      </div>
-      <div class="map-box" id="mapBox">
-        <canvas id="map" aria-label="全色マップ。クリックでカラーコードをコピー"></canvas>
-        <canvas id="gray" aria-label="白から黒のグレー。クリックでカラーコードをコピー"></canvas>
-        <div class="tip" id="tip" hidden><i></i><span class="hex"></span><small></small></div>
-      </div>
-      <div class="satrow">
-        <span>鮮やかさ</span>
-        <input type="range" id="sat" min="0" max="100" value="100" aria-label="マップの鮮やかさ">
-        <span class="num" id="satVal">100%</span>
-      </div>
-      <noscript><p class="note">このツールはJavaScriptを有効にすると使えます。</p></noscript>
-    </section>
-
-    <div class="row">
-      <section class="picker">
-        <div>
-          <h2>微調整 <small>四角の中と虹色のバーをドラッグして選ぶ</small></h2>
+<div class="wrap">
+  <main class="wrap" style="padding-inline:0">
+    <section class="hero" id="tool">
+      <div class="hero-l">
+        <h1>カラーコード（色番号）を、<br>1クリックでコピー。</h1>
+        <p class="hero-lead"><b>#FF4B1E</b> のような「#」と6桁の英数字の色番号を、全部の色を並べたマップから選んで、そのままコピーできます。登録不要・無料です。</p>
+        <div class="tabs" role="tablist" aria-label="色の選び方">
+          <button class="tab" id="tabMap" role="tab" aria-selected="true" aria-controls="panelMap" type="button"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 3.5v17M14.5 3.5v17"/></svg>全色マップ</button>
+          <button class="tab" id="tabFine" role="tab" aria-selected="false" aria-controls="panelFine" type="button"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>微調整</button>
+          <span class="spacer"></span>
+          <button class="pick" id="eye" type="button" title="画面の好きな場所の色を選んでコピー"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 5.5 4 4"/><path d="M19.8 4.2a2.6 2.6 0 0 0-3.7 0l-2.3 2.3-1.1-1.1-1.4 1.4 6 6 1.4-1.4-1.1-1.1 2.3-2.3a2.6 2.6 0 0 0 0-3.7z" fill="currentColor" stroke="none"/><path d="M12.4 8.2 5 15.6V19h3.4l7.4-7.4"/></svg><span>カラーを選択</span></button>
+          <input type="color" id="eyeAlt" class="eye-alt" value="#ff4b1e" tabindex="-1" aria-hidden="true">
+        </div>
+        <div class="panel" id="panelMap" role="tabpanel" aria-labelledby="tabMap">
+          <p class="cap">横が色相、縦が明るさ。クリックすると色番号がコピーされます。</p>
+          <div class="map-box" id="mapBox">
+            <canvas id="map" aria-label="全色マップ。クリックでカラーコードをコピー"></canvas>
+            <canvas id="gray" aria-label="白から黒のグレー。クリックでカラーコードをコピー"></canvas>
+            <div class="tip" id="tip" hidden><i></i><span class="hex"></span><small></small></div>
+          </div>
+          <div class="satrow">
+            <span>鮮やかさ</span>
+            <input type="range" id="sat" min="0" max="100" value="100" aria-label="マップの鮮やかさ">
+            <span class="num" id="satVal">100%</span>
+          </div>
+        </div>
+        <div class="panel" id="panelFine" role="tabpanel" aria-labelledby="tabFine" hidden>
+          <p class="cap">四角の中と虹色のバーをドラッグして、色を細かく決められます。</p>
           <div class="sv" id="sv"><canvas id="svCanvas"></canvas><div class="thumb" id="svThumb"></div></div>
+          <div class="bar" id="hue" aria-label="色相"><div class="thumb" id="hueThumb"></div></div>
+          <div class="opts"><label><input type="checkbox" id="optAuto" checked>指を離したら自動でコピー</label></div>
         </div>
-        <div class="bar" id="hue" aria-label="色相"><div class="thumb" id="hueThumb"></div></div>
-        <div class="opts">
-          <label><input type="checkbox" id="optAuto" checked>指を離したら自動でコピー</label>
-          <label><input type="checkbox" id="optHash" checked>先頭に # をつける</label>
-        </div>
-      </section>
+        <noscript><p class="note">このツールはJavaScriptを有効にすると使えます。</p></noscript>
+      </div>
 
-      <section class="current">
-        <h2>選んだ色</h2>
-        <button class="big" id="big" type="button" aria-label="選んだ色のカラーコードをコピー">
-          <span class="hex" id="bigHex">#FF4B1E</span><span>クリックでコピー</span>
-        </button>
-        <div class="fmts">
-          <button class="fmt" type="button" data-f="hex"><b>HEX</b><code id="fHex"></code></button>
-          <button class="fmt" type="button" data-f="rgb"><b>RGB</b><code id="fRgb"></code></button>
-          <button class="fmt" type="button" data-f="hsl"><b>HSL</b><code id="fHsl"></code></button>
+      <aside class="hero-r" aria-label="選んだ色">
+        <div class="pal-head"><b>選んだ色</b><label><input type="checkbox" id="optHash" checked>先頭に # をつける</label></div>
+        <div class="band" id="band">
+          <button class="big" id="big" type="button" aria-label="選んだ色のカラーコードをコピー">
+            <span class="hex" id="bigHex">#FF4B1E</span><span class="hint"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></svg>クリックでコピー</span>
+          </button>
+          <div class="fmts">
+            <button class="fmt" type="button" data-f="hex"><b>HEX</b><code id="fHex"></code></button>
+            <button class="fmt" type="button" data-f="rgb"><b>RGB</b><code id="fRgb"></code></button>
+            <button class="fmt" type="button" data-f="hsl"><b>HSL</b><code id="fHsl"></code></button>
+          </div>
         </div>
-        <div class="inrow">
-          <input id="hexIn" class="field" type="text" autocomplete="off" spellcheck="false" placeholder="カラーコードを入れて表示（例 ff69b4）" aria-label="カラーコードを入力">
-        </div>
+        <div class="tints" id="tints" aria-label="明るさ違いの色"></div>
+        <input id="hexIn" class="field" type="text" autocomplete="off" spellcheck="false" placeholder="カラーコードを入れて表示（例 ff69b4）" aria-label="カラーコードを入力">
         <p class="near" id="near" aria-live="polite"></p>
-      </section>
-    </div>
+      </aside>
+    </section>
 
     <section>
       <h2>コピーした色 <small>最新30色まで。クリックでもう一度コピー</small> <button class="linkbtn" id="clearHist" type="button" hidden>履歴を消す</button></h2>
@@ -351,11 +363,11 @@ footer p{margin:0}
           <p class="wname"><a id="wName" href="wairo/shinonomeiro/" target="_blank" rel="noopener">東雲色</a><span id="wYomi">しののめいろ</span></p>
           <p class="whex" id="wHex">#F19072</p>
           <p class="wyurai" id="wYurai"></p>
-          <a class="wmore" id="wMore" href="wairo/shinonomeiro/" target="_blank" rel="noopener">東雲色の詳細を見る<span aria-hidden="true"> →</span></a>
+          <a class="btn wmore" id="wMore" href="wairo/shinonomeiro/" target="_blank" rel="noopener">東雲色の詳細を見る<span aria-hidden="true"> →</span></a>
         </div>
         <div class="wbtns">
           <button class="btn" id="wCopy" type="button">コピー</button>
-          <button class="btn omi" id="omikuji" type="button">色みくじを引く</button>
+          <button class="btn solid" id="omikuji" type="button">色みくじを引く</button>
         </div>
       </div>
       <input id="wq" class="field" type="search" placeholder="名前や読み方で探す（例 しののめ、やまぶき）" aria-label="日本の色を名前で探す">
@@ -650,9 +662,10 @@ footer p{margin:0}
 
   function render() {
     const rgb = currentRgb(), hex = toHex(rgb), hsl = rgbToHsl(rgb);
-    const big = $('big');
-    big.style.background = '#' + hex;
-    big.style.color = lum(rgb) > 0.6 ? '#2b2b2b' : '#ffffff';
+    const band = $('band');
+    band.style.background = '#' + hex;
+    band.style.color = lum(rgb) > 0.6 ? '#1b1b1b' : '#ffffff';
+    renderTints(rgb);
     $('bigHex').textContent = fmtHex(hex);
     $('fHex').textContent = fmtHex(hex);
     $('fRgb').textContent = `rgb(${rgb.join(', ')})`;
@@ -948,10 +961,45 @@ footer p{margin:0}
     };
   }
 
+  // ---- 明るさ違いの色（右側のパレット） ----
+  const TINTS = [['明るく', .6], ['少し明るく', .3], ['少し暗く', -.25], ['暗く', -.5]];
+  const COPY_SVG = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></svg>';
+  function renderTints(rgb) {
+    const box = $('tints');
+    if (!box.children.length) {
+      TINTS.forEach(() => { const b = document.createElement('button'); b.type = 'button'; box.appendChild(b); });
+    }
+    TINTS.forEach(([label, t], i) => {
+      const c = rgb.map(x => Math.round(t > 0 ? x + (255 - x) * t : x * (1 + t)));
+      const hex = toHex(c), b = box.children[i];
+      b.style.background = '#' + hex;
+      b.style.color = lum(c) > 0.6 ? '#1b1b1b' : '#ffffff';
+      b.dataset.hex = hex;
+      b.innerHTML = `<span class="hex" style="font-size:14px;font-weight:700;opacity:1">${fmtHex(hex)}</span><span>${label}</span>${COPY_SVG}`;
+      b.setAttribute('aria-label', `${label}した色 ${fmtHex(hex)} をコピー`);
+    });
+  }
+  $('tints').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    copy(fmtHex(b.dataset.hex), b.dataset.hex);
+  });
+
+  // ---- タブ（全色マップ／微調整） ----
+  function selectTab(which) {
+    const map = which === 'map';
+    $('tabMap').setAttribute('aria-selected', map); $('tabFine').setAttribute('aria-selected', !map);
+    $('panelMap').hidden = !map; $('panelFine').hidden = map;
+    drawAll(); render();
+    try { localStorage.setItem('cc-tab', which); } catch {}
+  }
+  $('tabMap').onclick = () => selectTab('map');
+  $('tabFine').onclick = () => selectTab('fine');
+
   // ---- 起動 ----
   function drawAll() { drawMap(); drawGray(); drawSV(); }
   let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawAll, 120); });
   drawAll(); render(); renderHist();
+  try { if (localStorage.getItem('cc-tab') === 'fine') selectTab('fine'); } catch {}
 })();
 </script>
 </body>

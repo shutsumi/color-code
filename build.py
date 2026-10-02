@@ -159,10 +159,22 @@ def head(title, desc, url, prefix, theme='#ffffff', extra=''):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700;800&display=swap">
 <link rel="stylesheet" href="{prefix}assets/sub.css">
 {extra}</head>
 <body>
+<header class="topbar">
+  <div class="tb-in">
+    <a class="logo" href="{prefix}" aria-label="色番コピペ トップ"><img src="{prefix}favicon.svg" alt="" width="26" height="26"><span>色番コピペ</span></a>
+    <nav class="tb-nav" aria-label="サイト内のリンク">
+      <a href="{prefix}">全色マップ</a>
+      <a href="{prefix}wairo/">日本の色</a>
+      <a href="{prefix}#convert">RGB変換</a>
+      <a href="{prefix}#howto">使い方</a>
+      <a href="{prefix}#faq">よくある質問</a>
+    </nav>
+  </div>
+</header>
 <div class="wrap">
 '''
 
